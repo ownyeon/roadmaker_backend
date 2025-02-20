@@ -35,7 +35,9 @@ public class SecurityConfig {
     // private final MyUserDetailService userDetailService;
 
     // 생성자
-    public SecurityConfig(JwtRequestFilter jwtRequestFilter, JwtUtil jwtUtil) { ////, MyUserDetailService userDetailService,MemberService memberService
+    public SecurityConfig(JwtRequestFilter jwtRequestFilter, JwtUtil jwtUtil) { //// , MyUserDetailService
+                                                                                //// userDetailService,MemberService
+                                                                                //// memberService
         log.info("SecurityConfig 호출 : ");
         this.jwtRequestFilter = jwtRequestFilter;
         this.jwtUtil = jwtUtil;
@@ -52,21 +54,24 @@ public class SecurityConfig {
                 // CSRF 보호 비활성화 (JWT 사용시 일반적으로 사용)
                 .csrf(csrf -> csrf.disable())
                 // 요청별 권한 설정
+                // 개발중에만 추후 바꿔야함
                 .authorizeRequests(authorize -> authorize
-                        .requestMatchers("/upload/**").permitAll() // URL 경로
-                        .requestMatchers("/oauth2/**").permitAll() // URL 경로
-                        .requestMatchers("/api/oauth2/authorization/**").permitAll() // URL 경로
-                        // 특정 URL에 인증없이 허용
-                        .requestMatchers("/api/members/register", "/api/members/login").permitAll()
-                        // 나머지는 인증 필요
-                        .anyRequest().authenticated())
+                        .anyRequest().permitAll()) // 모든 요청을 인증 없이 허용
+                // .authorizeRequests(authorize -> authorize
+                // .requestMatchers("/upload/**").permitAll() // URL 경로
+                // .requestMatchers("/oauth2/**").permitAll() // URL 경로
+                // .requestMatchers("/api/oauth2/authorization/**").permitAll() // URL 경로
+                // // 특정 URL에 인증없이 허용
+                // .requestMatchers("/api/members/register", "/api/members/login").permitAll()
+                // // 나머지는 인증 필요
+                // .anyRequest().authenticated())
                 // oath2Login 설정
                 // successHandler => 로그인 성공 시 호출
                 // userInfoEndpoint => 인증과정에서 인증된 사용자에 대한 정보를 제공 하는 API 엔드포인트
                 // (사용자 정보를 가져오는 역할을 한다.) OAuth2 빌드 필수~
                 // .oauth2Login(oauth2 -> oauth2
-                //         .successHandler(oAuth2AuthenticationSuccessHandler())
-                //         .userInfoEndpoint(userInfo -> userInfo.userService(oAuth2UserService())))
+                // .successHandler(oAuth2AuthenticationSuccessHandler())
+                // .userInfoEndpoint(userInfo -> userInfo.userService(oAuth2UserService())))
 
                 // 사용자 요청이 오면 먼저 jwtRequestFilter가 실행되어 JWT 토큰을 검증한 후
                 // 이상이 없으면 SpringSecurity의 인증된 사용자로 처리됩니다.
@@ -77,7 +82,8 @@ public class SecurityConfig {
     // @Bean
     // // 동의 항목 처리
     // OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler() {
-    //     return new OAuth2AuthenticationSuccessHandler(jwtUtil, userDetailService, memberService);
+    // return new OAuth2AuthenticationSuccessHandler(jwtUtil, userDetailService,
+    // memberService);
     // }
 
     @Bean
