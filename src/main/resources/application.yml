@@ -1,0 +1,64 @@
+# yml 파일
+spring:
+  application:
+    name: roadmaker
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:mysql://10.0.131.46:3306/basic
+    username: ictedu
+    password: 1111
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: ce88d6193e92f4bfcfd30cbea927b829
+            client-secret: ZAtRLq5qlZDXgb6ZzeUqmOuoGldIKsbT
+            redirect-uri: http://3.38.253.110:8080/login/oauth2/code/kakao
+            authorization-grant-type: authorization_code
+            client-authentication-method: client_secret_post
+            client-name: Kakao
+            scope:
+              - profile_nickname
+              - profile_image
+              - account_email
+          naver:
+            client-id: vvynPYsitGCm2veM4D7A
+            client-secret: mrpiHpWaIb
+            redirect-uri: http://3.38.253.110:8080/login/oauth2/code/naver
+            authorization-grant-type: authorization_code
+            client-name: Naver
+            scope:
+              - name
+              - email
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: id
+          naver:
+            authorization-uri: https://nid.naver.com/oauth2.0/authorize
+            token-uri: https://nid.naver.com/oauth2.0/token
+            user-info-uri: https://openapi.naver.com/v1/nid/me
+            user-name-attribute: response
+  
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.ict.edu3.vo
+
+# 비밀키 사용(32바이트길이)
+# 1 시간 = 1000ms * 60 * 60 ;
+jwt:
+  secret: "abcdASDF1234abcdQWER0987poiuPOIU"
+  access-token-validity: 900000
+  refresh-token-validity: 604800000
