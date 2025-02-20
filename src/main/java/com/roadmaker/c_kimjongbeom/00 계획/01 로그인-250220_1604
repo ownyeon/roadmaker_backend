@@ -1,0 +1,50 @@
+I. 작업 흐름
+    1. 백엔드(Spring Boot)
+        - SecurityConfig에서 JWT및 OAuth2관련 보안설정
+        - 프론트엔드와 통신할 수 있도록 CORS 및 토큰 검증 설정
+    2. 프론트엔드(React, TypeScript 등)
+        - 로그인 버튼 클릭하면 백엔드의 OAuth2 인증 URL 리디렉션
+        - 사용자가 인증을 완료하면, 리디렉션된 후 토큰을 쿠키에 저장
+        - API요청에 Authorization헤더에 JWT를 포함하여 요청
+    3. 로그인 후 리디렉션
+        - 로그인 성공시 백엔드에서 JWT를 포함한 응답 전송
+        - 이 토큰을 프론트엔드에서 관리
+
+II. 필요사항
+    1. 백엔드
+        - OAuth2UserService
+        - JwtUtil 클래스, JwtRequestFilter
+        - Oauth2AthenticationSuccessHandler로 로그인 성공시 JWT발급
+        - SecurityConfig에서 Oauth2 및 JWT설정
+    2. 프론트엔드
+        - 로그인 요청을 OAuth2 인증 URL보내기
+        - JWT를 저장하고 API 요청시 헤더에 포함하여 전송
+        - 로그인 상태에 따라 UI처리(로그인/로그아웃)
+    3. 환경 설정
+        - SecurityConfig CORS설정
+            : 프론트엔드와 백엔드가 다른 포트에서 작업하기 때문에, CORS를 설정하여 서로의 요청을 허용하도록
+        - application.yml에서 민감정보 등 설정.
+            : URL, 비밀번호, 클라이언트 ID, 시크릿, JWT 비밀키, 액세스 토큰 및 리프레시 토큰의 유효시간 등등
+
+
+
+
+III. 파일 구조
+    roadmaker/
+    ├── src/
+    │   └── main/
+    │       ├── java/
+    │       │   └── com/
+    │       │       └── roadmaker/
+    │       │           ├── a_common/
+    │       │           │   ├── config/                 # 설정 관련 파일
+    │       │           │   └── security/               # JWT 관련 필터 및 유틸
+    │       │           ├── 개발자 작업/                 # 사용자 서비스 및 OAuth2 처리, API 엔드포인트 및 처리(개발자별 작업) 
+    │       │           └── RoadmakerApplication.java   # 스프링 부트 애플리케이션 클래스
+    │       ├── resources/
+    │       │   ├── application.yml                     # 환경설정 파일
+    │       │   ├── mapper/
+    │       │   │   └── *.xml                           # MyBatis Mapper XML 파일들
+    │       │   └── static/                             # 정적 파일 (예: js, css)
+    └── build.gradle                                         # 의존성 설정
+

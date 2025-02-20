@@ -6,9 +6,9 @@ spring:
     ansi:
       enabled: always
   datasource:
-    url: jdbc:mysql://10.0.131.46:3306/basic
-    username: ictedu
-    password: 1111
+    url: jdbc:mysql://192.168.0.181/road_maker
+    username: scott
+    password: tiger
     driver-class-name: com.mysql.cj.jdbc.Driver
   security:
     oauth2:
@@ -59,6 +59,6 @@ mybatis:
 # 비밀키 사용(32바이트길이)
 # 1 시간 = 1000ms * 60 * 60 ;
 jwt:
-  secret: "abcdASDF1234abcdQWER0987poiuPOIU"
+  secret: "j38ste32c1b4c85ba95akrofh88789ae"
   access-token-validity: 900000
   refresh-token-validity: 604800000
