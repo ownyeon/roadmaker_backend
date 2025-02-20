@@ -59,6 +59,6 @@ mybatis:
 # 비밀키 사용(32바이트길이)
 # 1 시간 = 1000ms * 60 * 60 ;
 jwt:
-  secret: "abcdASDF1234abcdQWER0987poiuPOIU"
+  secret: "j38ste32c1b4c85ba95akrofh88789ae"
   access-token-validity: 900000
   refresh-token-validity: 604800000
