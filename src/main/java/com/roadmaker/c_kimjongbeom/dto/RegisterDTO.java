@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RegisterRequest {
+public class RegisterDTO {
     
-    private String email;       // 아이디(이메일)
-    private String password;    // 비밀번호(토큰)
-    private String nickname;    // 닉네임
-    private String gender;      // 성별
-    private Integer age;        // 나이
+    private String memEmail;       // 아이디(이메일)
+    private String memSecret;    // 비밀번호(토큰)
+    private String memNickname;    // 닉네임
+    private String memGender;      // 성별
+    private Integer memAge;        // 나이
 
 }
 

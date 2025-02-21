@@ -20,8 +20,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.roadmaker.a_common.security.JwtRequestFilter;
 import com.roadmaker.a_common.security.JwtUtil;
-// import com.ict.edu3.service.MemberService;
-// import com.ict.edu3.service.MyUserDetailService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -55,16 +53,17 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 // 요청별 권한 설정
                 // 개발중에만 추후 바꿔야함
-                .authorizeRequests(authorize -> authorize
-                        .anyRequest().permitAll()) // 모든 요청을 인증 없이 허용
-                // .authorizeRequests(authorize -> authorize
+                //.authorizeRequests(authorize -> authorize
+                //        .anyRequest().permitAll()) // 모든 요청을 인증 없이 허용
+                 .authorizeRequests(authorize -> authorize
                 // .requestMatchers("/upload/**").permitAll() // URL 경로
                 // .requestMatchers("/oauth2/**").permitAll() // URL 경로
-                // .requestMatchers("/api/oauth2/authorization/**").permitAll() // URL 경로
+                 .requestMatchers("/api/oauth2/authorization/**").permitAll() // URL 경로
                 // // 특정 URL에 인증없이 허용
                 // .requestMatchers("/api/members/register", "/api/members/login").permitAll()
                 // // 나머지는 인증 필요
-                // .anyRequest().authenticated())
+                // .anyRequest().authenticated()
+                )
                 // oath2Login 설정
                 // successHandler => 로그인 성공 시 호출
                 // userInfoEndpoint => 인증과정에서 인증된 사용자에 대한 정보를 제공 하는 API 엔드포인트
@@ -101,7 +100,7 @@ public class SecurityConfig {
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         // 허용할 헤더 설정
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
-        // 인증정보 허용
+        // 인증정보 허용(쿠키나 인증 헤더를 사용할 경우 true)
         corsConfig.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
