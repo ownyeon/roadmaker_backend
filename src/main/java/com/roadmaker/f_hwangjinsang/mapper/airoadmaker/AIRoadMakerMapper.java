@@ -1,11 +1,11 @@
-package com.roadmaker.f_hwangjinsang.mapper;
+package com.roadmaker.f_hwangjinsang.mapper.airoadmaker;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import com.roadmaker.f_hwangjinsang.dto.AIRoadMakerDTO;
+import com.roadmaker.f_hwangjinsang.dto.airoadmaker.AIRoadMakerDTO;
 
 @Mapper
 public interface AIRoadMakerMapper {
