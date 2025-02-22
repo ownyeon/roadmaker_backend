@@ -47,10 +47,10 @@ public class AuthController {
      */
 
     @PostMapping("login")
-    public DataDTO login(@RequestBody MembersDTO mdto) {
+    public DataDTO login(@RequestBody MembersDTO mdto, HttpServletResponse response) {
 
         System.out.println("로그인 컨트롤러 진입");
-        DataDTO DataDTO = new DataDTO();
+        DataDTO dataDTO = new DataDTO();
 
         try {
             // 사용자 정보 확인
@@ -74,25 +74,33 @@ public class AuthController {
             String refreshToken = jwtUtil.generateRefreshToken(mdto.getMemEmail());
             String accessToken = jwtUtil.generateAccessToken(mdto.getMemEmail());
 
-            // refreshToken DB에 저장 하기
+            // refreshToken DB에 저장
             memberService.saveRefreshToken(userDetails.getUsername(), refreshToken,
                     jwtUtil.extractExpiration(refreshToken));
+
+            // 액세스 토큰을 쿠키에 설정
+            Cookie accessTokenCookie = new Cookie("access_token", accessToken);
+            accessTokenCookie.setHttpOnly(true); // JavaScript에서 접근 불가
+            accessTokenCookie.setMaxAge(3600);   // 1시간 유효
+            accessTokenCookie.setPath("/");      // 모든 경로에서 접근 가능
+            response.addCookie(accessTokenCookie);
+
 
             Map<String, String> tokens = new HashMap<>();
             tokens.put("refreshToken", refreshToken);
             tokens.put("accessToken", accessToken);
 
-            DataDTO.setData(tokens);
-            DataDTO.setSuccess(true);
-            DataDTO.setMessage("로그인 성공");
+            dataDTO.setData(tokens);
+            dataDTO.setSuccess(true);
+            dataDTO.setMessage("로그인 성공");
         } catch (Exception e) {
-            DataDTO.setSuccess(false);
-            DataDTO.setMessage(e.getMessage());
+            dataDTO.setSuccess(false);
+            dataDTO.setMessage(e.getMessage());
         }
         System.out.println("로그인 컨트롤러 진행 완료");
-        System.out.println(DataDTO);
+        System.out.println(dataDTO);
         System.out.println("진행 완료 컨트롤러 아웃");
-        return DataDTO;
+        return dataDTO;
 
     }
 
@@ -100,7 +108,7 @@ public class AuthController {
     @PostMapping("detail")
     public DataDTO postDetail(@RequestBody MembersDTO mdto,
             @RequestHeader(value = "인증", required = false) String token) {
-        DataDTO DataDTO = new DataDTO();
+        DataDTO dataDTO = new DataDTO();
         try {
             log.info("아이디 : " + mdto.getMemEmail());
             if (token == null || !token.startsWith("Bearer ")) {
@@ -111,7 +119,7 @@ public class AuthController {
             log.info(memEmail);
             log.info(mdto.getMemEmail());
             if (!memEmail.equals(mdto.getMemEmail())) {
-                DataDTO.setSuccess(false);
+                dataDTO.setSuccess(false);
                 throw new IllegalArgumentException("기 로그인한 사용자 정보가 다릅니다.");
             }
             MembersDTO member = memberService.getMemberDetail(mdto.getMemEmail());
@@ -119,38 +127,41 @@ public class AuthController {
             if (member == null) {
                 throw new IllegalArgumentException("가입정보가 없습니다.");
             }
-            DataDTO.setSuccess(true);
-            DataDTO.setData(member);
+            dataDTO.setSuccess(true);
+            dataDTO.setData(member);
         } catch (Exception e) {
-            DataDTO.setSuccess(false);
-            DataDTO.setMessage(e.getMessage());
+            dataDTO.setSuccess(false);
+            dataDTO.setMessage(e.getMessage());
         }
-        return DataDTO;
+        return dataDTO;
     }
 
 
     @PostMapping("logout")
     public DataDTO postLogout(@RequestHeader(value = "인증", required = false) String token,
             HttpServletResponse response) {
-        DataDTO DataDTO = new DataDTO();
+        DataDTO dataDTO = new DataDTO();
         try {
             if (token == null || !token.startsWith("Bearer ")) {
                 throw new Exception("토큰이 유효하지 않습니다.");
             }
             // 토큰 검증
 
+            // 리프레시 토큰 삭제
             String memEmail = jwtUtil.validateAndExtractmemEmail(token.substring(7));
             memberService.deleteRefreshToken(memEmail);
-            Cookie cookie = new Cookie("authToken", null);
+
+            //액세스 토큰 쿠키 삭제
+            Cookie cookie = new Cookie("access_Token", null);
             cookie.setMaxAge(0);
-            cookie.setPath("/");
+            cookie.setPath("/"); //모든 경로에서 삭제
             response.addCookie(cookie);
 
-            DataDTO.setSuccess(true);
+            dataDTO.setSuccess(true);
         } catch (Exception e) {
-            DataDTO.setSuccess(false);
+            dataDTO.setSuccess(false);
         }
-        return DataDTO;
+        return dataDTO;
     }    
 
     // 회원가입 API

@@ -20,7 +20,8 @@ public class MembersDTO {
     private String memEmail;       // 아이디(이메일)
 
     private String memSecret;      // 비밀번호(토큰)
-    private String memSecret2;      // 여분 컬럼
+    private String memSecret2;      // 리프레시토큰
+    private String memSec2expire;   // 리프레시토큰만료
     private String memNickname;    // 닉네임
     private String memGender;      // 성별
     private Integer memAge;        // 나이

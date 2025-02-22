@@ -11,7 +11,7 @@ public interface MemberService {
     public List<MembersDTO> getMemberList();
     public MembersDTO getMemberDetail(String memEmail);
 
-    void saveRefreshToken(String memEmail, String refresh_token, Date expiry_date);
+    void saveRefreshToken(String memId, String refresh_token, Date expiry_date);
     String findRefreshToken(String memEmail);
     void deleteRefreshToken(String memEmail);
    

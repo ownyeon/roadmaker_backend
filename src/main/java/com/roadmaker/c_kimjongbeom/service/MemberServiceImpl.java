@@ -34,7 +34,17 @@ public class MemberServiceImpl implements MemberService {
     public void saveRefreshToken(String memEmail, String refresh_token, Date expiry_date) {
         System.out.println("서비스임플 saverefreshtoken 진입");
 
-        memberMapper.saveRefreshToken(memEmail,refresh_token,expiry_date);
+
+    // 1. memEmail을 통해 memId를 찾는다
+    Integer memId = memberMapper.findMemIdByEmail(memEmail); // memberMapper에 추가된 메서드 호출
+
+    // 2. memId가 null이 아닌 경우에만 refresh token을 저장한다
+    if (memId != null) {
+        memberMapper.saveRefreshToken(memId, refresh_token, expiry_date);
+    } else {
+        // memId가 null인 경우 예외 처리
+        throw new RuntimeException("Member with email " + memEmail + " not found.");
+    }
     }
 
     @Override
