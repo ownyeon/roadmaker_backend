@@ -69,7 +69,7 @@ public class KeywordController {
         return service.deleteKeyword(admin);
     }
 
-    @PostMapping("/keywordlist/select") // 키워드 관리 여행지 검색 관련
+    @PostMapping("/keywordList/select") // 키워드 관리 여행지 검색 관련
     public DataDTO keywordListSelect(@RequestBody AdminDTO admin) {
         DataDTO data = new DataDTO();
         try {
@@ -96,16 +96,35 @@ public class KeywordController {
         }
         return data;
     }
+
     @PostMapping("/keyword/destinationAdd") // 키워드 관리 여행지 추가 여행지 리스트 검색
     public DataDTO destinationsInsert(@RequestBody AdminDTO admin) {
-        log.info(""+admin);
+        log.info("" + admin);
         DataDTO data = new DataDTO();
+
         try {
+            data.setSuccess(true);
+            data.setData(service.insertKeyused(admin));
+            data.setMessage("데이터 입력 성공");
         } catch (Exception e) {
             data.setSuccess(false);
-            data.setMessage("데이터 검색 실패");
+            data.setMessage("데이터 입력 실패");
         }
         return data;
+    }
+
+    @PostMapping("/keyword/destinationDelete") // 키워드 관리 삭제 관련
+    public DataDTO keywordByDestinationDelete(@RequestBody AdminDTO admin) {
+        DataDTO data = new DataDTO();
+        try {
+            data.setSuccess(service.deleteKeyused(admin));
+            data.setMessage("데이터 삭제 성공");
+        } catch (Exception e) {
+            data.setSuccess(false);
+            data.setMessage("데이터 삭제 실패");
+        }
+        return data;
+
     }
     // ******************************************************** 키워드 관련
 }

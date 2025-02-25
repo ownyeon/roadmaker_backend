@@ -42,7 +42,7 @@ public interface KeywordMapper {
     public Integer deleteCountry(AdminDTO admin);
 
     // 키워드별 여행지 목록 불러오기
-    @Select("SELECT d.destiname destiname, d.destiid destiid " +
+    @Select("SELECT d.destiname destiname, d.destiid destiid, k.keyuid keyuid " +
             " FROM keyused k JOIN destinations d " +
             " ON k.destiid = d.destiid " +
             " WHERE k.keymid = #{keymid} ")
@@ -55,4 +55,12 @@ public interface KeywordMapper {
     // 키워드 관리 여행지 추가 여행지 리스트 부르기
     @Select("SELECT destiname,destiid FROM destinations WHERE destiname LIKE CONCAT('%', #{searchWord}, '%')")
     public List<AdminDTO> getDestinationListBySearchWord(AdminDTO admin);
+
+    // 키워드 관리 키워드 내 여행지 추가
+    @Insert("INSERT INTO keyused(destiid,Keymid) VALUES(#{destiid},#{keymid})")
+    public Integer insertKeyused(AdminDTO dto);
+
+    // 키워드 관리 키워드 내 여행지 삭제
+    @Delete("DELETE FROM keyused WHERE keyuid = #{keyuid}")
+    public Integer deleteKeyused(AdminDTO admin);
 }

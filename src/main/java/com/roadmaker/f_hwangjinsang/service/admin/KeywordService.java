@@ -18,4 +18,8 @@ public interface KeywordService {
     public List<AdminDTO> getKeywordByDestinationsList(AdminDTO admin);
     // 키워드 관리 여행지 추가 여행지 목록
     public List<AdminDTO> getDestinationList(AdminDTO admin);
+    // 키워드 관리 키워드 소속 여행지 입력
+    public boolean insertKeyused(AdminDTO admin);
+    // 키워드 관리 키워드 소속 여행지 삭제
+    public boolean deleteKeyused(AdminDTO admin);
 }

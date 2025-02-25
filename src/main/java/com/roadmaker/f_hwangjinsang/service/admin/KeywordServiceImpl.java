@@ -1,6 +1,7 @@
 package com.roadmaker.f_hwangjinsang.service.admin;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -90,6 +91,32 @@ public class KeywordServiceImpl implements KeywordService {
             return mapper.getDestinationList();
         }
 
+    }
+
+    @Override // 키워드 관리 키워드내 여행지 추가
+    public boolean insertKeyused(AdminDTO admin) {
+        AdminDTO dto = new AdminDTO();
+        boolean isSuccess = false;
+        try {
+            if (admin.getSelectedDestinations().size() > 0) {
+                for (Map<String, String> destination : admin.getSelectedDestinations()) {
+                    dto.setDestiid(Integer.parseInt(destination.get("destiid")));
+                    dto.setKeymid(admin.getKeymid());
+                    Integer result = mapper.insertKeyused(dto);
+                    isSuccess = result != 0 && result != -1;
+                }
+            }
+            return isSuccess;
+        } catch (Exception e) {
+            log.info("데이터 입력중 서비스에서 오류발생" + e.toString());
+            return false;
+        }
+
+    }
+
+    @Override // 키워드 관리 키워드내 여행지 삭제
+    public boolean deleteKeyused(AdminDTO admin) {
+        return mapper.deleteKeyused(admin) != -1 ? true : false;
     }
 
 }
