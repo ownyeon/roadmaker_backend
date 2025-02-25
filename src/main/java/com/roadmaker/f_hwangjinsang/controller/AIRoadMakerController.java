@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.roadmaker.f_hwangjinsang.dto.DataDTO;
+import com.roadmaker.a_common.dto.DataDTO;
 import com.roadmaker.f_hwangjinsang.service.AIRoadMakerService;
 
 import lombok.RequiredArgsConstructor;

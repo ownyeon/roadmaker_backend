@@ -1,4 +1,4 @@
-package com.roadmaker.f_hwangjinsang.dto;
+package com.roadmaker.a_common.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
