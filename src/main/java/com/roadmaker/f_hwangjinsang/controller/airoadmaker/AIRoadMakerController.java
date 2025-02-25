@@ -1,4 +1,4 @@
-package com.roadmaker.f_hwangjinsang.controller;
+package com.roadmaker.f_hwangjinsang.controller.airoadmaker;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.roadmaker.f_hwangjinsang.dto.DataDTO;
-import com.roadmaker.f_hwangjinsang.service.AIRoadMakerService;
+import com.roadmaker.f_hwangjinsang.service.airoadmaker.AIRoadMakerService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,12 +1,12 @@
-package com.roadmaker.f_hwangjinsang.service;
+package com.roadmaker.f_hwangjinsang.service.airoadmaker;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.roadmaker.f_hwangjinsang.dto.AIRoadMakerDTO;
-import com.roadmaker.f_hwangjinsang.mapper.AIRoadMakerMapper;
+import com.roadmaker.f_hwangjinsang.dto.airoadmaker.AIRoadMakerDTO;
+import com.roadmaker.f_hwangjinsang.mapper.airoadmaker.AIRoadMakerMapper;
 
 @Service
 public class AIRoadMakerServiceImpl implements AIRoadMakerService {

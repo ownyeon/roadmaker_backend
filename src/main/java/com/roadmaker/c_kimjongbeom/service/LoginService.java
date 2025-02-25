@@ -1,11 +1,5 @@
 package com.roadmaker.c_kimjongbeom.service;
 
-import java.util.Date;
-import java.util.List;
-
-import com.roadmaker.c_kimjongbeom.dto.LoginDTO;
-import com.roadmaker.c_kimjongbeom.dto.MembersDTO;
-import com.roadmaker.f_hwangjinsang.dto.DataDTO;
 
 public interface LoginService {
 /* 

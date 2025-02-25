@@ -1,0 +1,116 @@
+※ 리프레시 토큰 관리 테이블 추가
+CREATE TABLE refresh_tokens (
+    memId INT,                                         -- 회원 ID (Foreign Key, members 테이블의 memId)
+    refresh_token VARCHAR(255) NOT NULL,                -- Refresh Token
+    expiry_date DATETIME NOT NULL,                     -- Refresh Token의 만료일
+    PRIMARY KEY (memId),                               -- 회원 ID를 Primary Key로 설정 (회원당 하나의 Refresh Token)
+    CONSTRAINT fk_memid FOREIGN KEY (memId)            -- 회원 ID가 members 테이블의 memId를 참조하도록 설정
+        REFERENCES members(memId)                      -- 회원 ID가 유효한 회원인지 검증
+        ON DELETE CASCADE                              -- 회원 탈퇴 시 해당 회원의 Refresh Token도 자동 삭제
+        ON UPDATE CASCADE                              -- 회원 정보 업데이트 시 연동되어 자동 업데이트
+);
+=========================================================================================================
+
+
+I. 작업 흐름
+    1. 백엔드(Spring Boot)
+        - SecurityConfig에서 JWT및 OAuth2관련 보안설정
+        - 프론트엔드와 통신할 수 있도록 CORS 및 토큰 검증 설정
+    2. 프론트엔드(React, TypeScript 등)
+        - 로그인 버튼 클릭하면 백엔드의 OAuth2 인증 URL 리디렉션
+        - 사용자가 인증을 완료하면, 리디렉션된 후 토큰을 쿠키에 저장
+        - API요청에 Authorization헤더에 JWT를 포함하여 요청
+    3. 로그인 후 리디렉션
+        - 로그인 성공시 백엔드에서 JWT를 포함한 응답 전송
+        - 이 토큰을 프론트엔드에서 관리
+
+
+II. 필요사항
+    1. 백엔드
+        - OAuth2UserService
+        - JwtUtil 클래스, JwtRequestFilter
+        - Oauth2AthenticationSuccessHandler로 로그인 성공시 JWT발급
+        - SecurityConfig에서 Oauth2 및 JWT설정
+    2. 프론트엔드
+        - 로그인 요청을 OAuth2 인증 URL보내기
+        - JWT를 저장하고 API 요청시 헤더에 포함하여 전송
+        - 로그인 상태에 따라 UI처리(로그인/로그아웃)
+    3. 환경 설정
+        - SecurityConfig CORS설정
+            : 프론트엔드와 백엔드가 다른 포트에서 작업하기 때문에, CORS를 설정하여 서로의 요청을 허용하도록
+        - application.yml에서 민감정보 등 설정.
+            : URL, 비밀번호, 클라이언트 ID, 시크릿, JWT 비밀키, 액세스 토큰 및 리프레시 토큰의 유효시간 등등
+
+
+
+III. 파일 구조
+
+src/
+│
+├── main/
+│   ├── java/
+│       ├── com/
+│       │   └── roadmaker/
+│       │       ├── a_common/
+│       │       │   ├── config
+│       │       │   │   └── SecurityConfig.java
+│       │       │   └── security/
+│       │       │       ├── JwtTokenProvider.java
+│       │       │       └── JwtUtil.java
+│       │       │
+│       │       └── c_kimjongbeom/
+│       │           ├── controller/
+│       │           │   └── AuthController.java
+│       │           ├── dto/
+│       │           │   └── MembersDTO.java
+│       │           ├── mapper/
+│       │           │   └── MemberMapper.java
+│       │           └── service/
+│       │               ├── MemberService.java
+│       │               ├── MemberServiceImpl.java
+│       │               └── MyUserDetailService.java
+│       └── resources/
+│           └── application.yml
+└── build.gradle
+
+====================================================================================
+※ 로그인 및 JWT 흐름
+I. 로그인:
+    - 사용자가 로그인 시도 시, MyUserDetailService의 loadUserByUsername 메서드가 호출되어 memEmail로 회원 정보를 조회.
+    - 해당 회원 정보가 존재하면 JWT 토큰을 발급하고, 클라이언트에 반환.
+
+
+II. JWT 토큰 인증:
+    - 로그인 후 발급된 access token과 refresh token은 클라이언트에 저장.
+        (access토큰은 쿠키에, refresh token은 회원별 db로 관리)
+        ; 로그인 및 회원가입 등에서 members테이블의 mememail로 회원 정보를 호출하고 있었으나, 
+         mememail은 members테이블의 기본키가 아니어서 refresh token 관리 테이블에서는 memId를 join하여 mememail을 호출함. 
+    - 클라이언트는 서버에 요청할 때 access token을 포함시켜 인증.
+    - 만약, access token이 만료되면, refresh token을 이용해 새로운 access token을 발급.
+
+
+III. 각 파일의 역할
+    1. AuthController.java
+        역할: 클라이언트에서 회원가입 및 로그인 요청을 처리.
+        요청에 따라 서비스 메서드를 호출하여 회원가입, 로그인, 토큰 갱신 등의 기능을 수행.
+    2. MembersDTO.java
+        역할: 회원 정보를 담는 데이터 전송 객체(DTO).
+        회원의 이메일, 비밀번호(암호화된), 닉네임, 성별, 나이 등 정보를 포함.
+    3. MemberMapper.java
+        역할: MyBatis를 사용해 데이터베이스와 상호작용하는 인터페이스.
+        회원 정보 조회, 저장, refresh token 처리 등을 담당하는 SQL 쿼리를 정의.
+    4. MemberService.java / MemberServiceImpl.java
+        역할: 회원 관련 비즈니스 로직을 담당하는 서비스 목록.
+        회원 가입, 로그인, refresh token 처리 등의 기능을 제공.
+    5. MyUserDetailService.java
+        역할: Spring Security의 UserDetailsService 구현체. 
+        사용자가 제공한 이메일을 바탕으로 회원 정보를 조회하고, 인증을 위한 JWT 토큰을 생성.
+    6. JwtTokenProvider.java
+        역할: JWT 토큰을 생성하고 검증.
+        주로 access token과 refresh token을 발급하고, 검증.
+    7. SecurityConfig.java
+        역할: Spring Security의 설정.
+        인증 및 권한 관리, JWT 토큰을 통한 인증 방식을 설정.
+    8. application.yml
+        역할: Spring Boot 애플리케이션의 설정.
+        데이터베이스, 보안 설정, JWT 관련 설정 등을 정의.

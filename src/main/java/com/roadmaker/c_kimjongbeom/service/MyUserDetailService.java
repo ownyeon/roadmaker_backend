@@ -1,7 +1,9 @@
 package com.roadmaker.c_kimjongbeom.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,39 +14,43 @@ import org.springframework.stereotype.Service;
 import com.roadmaker.c_kimjongbeom.dto.MembersDTO;
 import com.roadmaker.c_kimjongbeom.mapper.MemberMapper;
 
-import io.jsonwebtoken.lang.Collections;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class MyUserDetailService implements UserDetailsService{
-    
+public class MyUserDetailService implements UserDetailsService {
+
+    // MemberMapper를 주입받아 회원 정보를 조회
     private final MemberMapper memberMapper;
 
-    // id를 받아서 members 테이블에 해당 id가 있는지 찾기
+    // 사용자의 이메일로 회원 정보를 조회하여 UserDetails 객체를 생성
     @Override
     public UserDetails loadUserByUsername(String memEmail) throws UsernameNotFoundException {
-        System.out.println("MyUserDetailService 아이디 찾기 진입");
-        log.info("MyUserDetailService 아이디 찾기 진입");
+        log.info("loadUserByUsername 시작: 이메일 = {}", memEmail);  // 로그 추가: 메서드 시작 시 입력된 이메일 출력
+        
+        // 이메일로 회원 정보를 조회
         MembersDTO member = memberMapper.findByEmail(memEmail);
-        System.out.println("MyUserDetailService 아이디 찾기 과정 완료");
-        log.info("MyUserDetailService 아이디 찾기 과정 완료");
-
-        if(member==null){
-            System.out.println("MyUserDetailService 사용자 정보 없을시");
-            log.warn("MyUserDetailService 사용자 정보 없음: " + memEmail);
-            throw new UsernameNotFoundException("이메일을 확인해주세요 : "+memEmail);
+        
+        if (member == null) {
+            log.warn("사용자 정보 없음: {}", memEmail);  // 로그 추가: 사용자 정보가 없을 때 경고 로그
+            throw new UsernameNotFoundException("이메일을 확인해주세요.");  // 예외 발생
         }
-        System.out.println("MyUserDetailService 사용자 정보 전송");
-        log.info("MyUserDetailService 사용자 정보 전송");
 
+        log.info("회원 정보 조회 완료: {}", member);  // 로그 추가: 회원 정보가 정상적으로 조회되었을 때 로그 출력
 
-        return new User(member.getMemEmail(), member.getMemSecret(), new ArrayList<>());
-        }
-    // 정보를 받아서 회원가입하기
-    public void registerUser(MembersDTO mDto){
-        memberMapper.insertMember(mDto);
+        // 사용자 권한을 리스트로 생성 (회원의 역할을 권한으로 추가)
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + member.getMemRole()));  // 역할을 ROLE_ 접두어와 함께 추가
+
+        log.info("사용자 권한 설정 완료: {}", authorities);  // 로그 추가: 권한 리스트 설정 완료 로그 출력
+
+        // UserDetails 객체를 생성하여 반환 (Spring Security의 User 객체 사용)
+        UserDetails userDetails = new User(member.getMemEmail(), member.getMemSecret(), authorities);
+
+        log.info("UserDetails 객체 반환: {}", userDetails);  // 로그 추가: 반환할 UserDetails 객체 로그 출력
+
+        return userDetails;
     }
 }

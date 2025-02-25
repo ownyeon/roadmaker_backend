@@ -1,6 +1,5 @@
 package com.roadmaker.c_kimjongbeom.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,17 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-// 새로운 로그인 응답 DTO 정의
-public class LoginDTO {
-    private String accessToken;
-    private String refreshToken;
+// 토큰의 사용자 정보
+public class DataDTO2 {
     private Integer memId;
     private String memEmail;
     private String memRole;
     private String memNickname;
     private Integer memStatus;
-    private TokensDTO tokens; //토큰 정보 관리
-    private MembersDTO data;
-    private boolean success;
-    private String message;
 }
