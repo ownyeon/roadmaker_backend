@@ -2,7 +2,7 @@ package com.roadmaker.f_hwangjinsang.service.admin;
 
 import java.util.List;
 
-import com.roadmaker.f_hwangjinsang.dto.DataDTO;
+import com.roadmaker.a_common.dto.DataDTO;
 import com.roadmaker.f_hwangjinsang.dto.admin.AdminDTO;
 
 public interface KeywordService {

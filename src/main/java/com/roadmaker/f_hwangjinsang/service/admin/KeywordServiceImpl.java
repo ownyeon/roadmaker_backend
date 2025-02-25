@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.roadmaker.f_hwangjinsang.dto.DataDTO;
+import com.roadmaker.a_common.dto.DataDTO;
 import com.roadmaker.f_hwangjinsang.dto.admin.AdminDTO;
 import com.roadmaker.f_hwangjinsang.mapper.admin.KeywordMapper;
 

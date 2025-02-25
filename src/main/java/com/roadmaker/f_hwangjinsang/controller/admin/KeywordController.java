@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.roadmaker.f_hwangjinsang.dto.DataDTO;
+import com.roadmaker.a_common.dto.DataDTO;
 import com.roadmaker.f_hwangjinsang.dto.admin.AdminDTO;
 import com.roadmaker.f_hwangjinsang.service.admin.KeywordService;
 
