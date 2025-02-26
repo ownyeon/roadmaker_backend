@@ -1,0 +1,332 @@
+2025-02-25 18:03:44 - Starting RoadmakerApplication using Java 17.0.12 with PID 18408 (D:\ROADMAKER\backend\bin\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:03:44 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:03:44 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:03:44 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:03:44 - Starting service [Tomcat]
+2025-02-25 18:03:44 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:03:44 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:03:44 - Root WebApplicationContext: initialization completed in 259 ms
+2025-02-25 18:03:44 - SecurityConfig 호출 : 
+2025-02-25 18:03:44 - SecurityFilterChain 호출 
+
+2025-02-25 18:03:44 - LiveReload server is running on port 35729
+2025-02-25 18:03:44 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:03:44 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:03:44 - Started RoadmakerApplication in 0.542 seconds (process running for 139.047)
+2025-02-25 18:03:44 - Condition evaluation unchanged
+2025-02-25 18:04:02 - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-02-25 18:04:02 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25 18:04:02 - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:04:02 - Graceful shutdown complete
+2025-02-25 18:04:02 - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:04:02 - Starting RoadmakerApplication using Java 17.0.12 with PID 18408 (D:\ROADMAKER\backend\bin\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:04:02 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:04:02 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:04:02 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:04:02 - Starting service [Tomcat]
+2025-02-25 18:04:02 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:04:02 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:04:02 - Root WebApplicationContext: initialization completed in 226 ms
+2025-02-25 18:04:02 - SecurityConfig 호출 : 
+2025-02-25 18:04:03 - SecurityFilterChain 호출 
+
+2025-02-25 18:04:03 - LiveReload server is running on port 35729
+2025-02-25 18:04:03 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:04:03 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:04:03 - Started RoadmakerApplication in 0.4 seconds (process running for 157.237)
+2025-02-25 18:04:03 - Condition evaluation unchanged
+2025-02-25 18:04:55 - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-02-25 18:04:55 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25 18:04:55 - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:04:55 - Graceful shutdown complete
+2025-02-25 18:04:55 - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:04:55 - Starting RoadmakerApplication using Java 17.0.12 with PID 18408 (D:\ROADMAKER\backend\bin\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:04:55 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:04:55 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:04:55 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:04:55 - Starting service [Tomcat]
+2025-02-25 18:04:55 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:04:55 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:04:55 - Root WebApplicationContext: initialization completed in 158 ms
+2025-02-25 18:04:55 - SecurityConfig 호출 : 
+2025-02-25 18:04:55 - SecurityFilterChain 호출 
+
+2025-02-25 18:04:55 - LiveReload server is running on port 35729
+2025-02-25 18:04:55 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:04:55 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:04:55 - Started RoadmakerApplication in 0.337 seconds (process running for 209.961)
+2025-02-25 18:04:55 - Condition evaluation unchanged
+2025-02-25 18:05:34 - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-02-25 18:05:34 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25 18:05:34 - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:05:34 - Graceful shutdown complete
+2025-02-25 18:05:34 - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:05:34 - Starting RoadmakerApplication using Java 17.0.12 with PID 18408 (D:\ROADMAKER\backend\bin\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:05:34 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:05:35 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:05:35 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:05:35 - Starting service [Tomcat]
+2025-02-25 18:05:35 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:05:35 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:05:35 - Root WebApplicationContext: initialization completed in 146 ms
+2025-02-25 18:05:35 - SecurityConfig 호출 : 
+2025-02-25 18:05:35 - SecurityFilterChain 호출 
+
+2025-02-25 18:05:35 - LiveReload server is running on port 35729
+2025-02-25 18:05:35 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:05:35 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:05:35 - Started RoadmakerApplication in 0.257 seconds (process running for 249.388)
+2025-02-25 18:05:35 - Condition evaluation unchanged
+2025-02-25 18:05:56 - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-02-25 18:05:56 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-25 18:05:56 - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:05:57 - Graceful shutdown complete
+2025-02-25 18:05:57 - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:25:43 - Starting RoadmakerApplication using Java 17.0.12 with PID 19272 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:25:43 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:25:43 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:25:43 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:25:44 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:25:44 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:25:44 - Starting service [Tomcat]
+2025-02-25 18:25:44 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:25:44 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:25:44 - Root WebApplicationContext: initialization completed in 1052 ms
+2025-02-25 18:25:44 - SecurityConfig 호출 : 
+2025-02-25 18:25:45 - SecurityFilterChain 호출 
+
+2025-02-25 18:25:45 - LiveReload server is running on port 35729
+2025-02-25 18:25:45 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:25:45 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:25:45 - Started RoadmakerApplication in 2.847 seconds (process running for 3.073)
+2025-02-25 18:27:04 - Starting RoadmakerApplication using Java 17.0.12 with PID 5112 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:27:04 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:27:04 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:27:04 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:27:05 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:27:05 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:27:05 - Starting service [Tomcat]
+2025-02-25 18:27:05 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:27:05 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:27:05 - Root WebApplicationContext: initialization completed in 951 ms
+2025-02-25 18:27:05 - SecurityConfig 호출 : 
+2025-02-25 18:27:06 - SecurityFilterChain 호출 
+
+2025-02-25 18:27:06 - LiveReload server is running on port 35729
+2025-02-25 18:27:06 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:27:06 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:27:06 - Started RoadmakerApplication in 2.692 seconds (process running for 2.91)
+2025-02-25 18:27:32 - Starting RoadmakerApplication using Java 17.0.12 with PID 20776 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:27:32 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:27:32 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:27:32 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:27:33 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:27:33 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:27:33 - Starting service [Tomcat]
+2025-02-25 18:27:33 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:27:33 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:27:33 - Root WebApplicationContext: initialization completed in 896 ms
+2025-02-25 18:27:33 - SecurityConfig 호출 : 
+2025-02-25 18:27:33 - SecurityFilterChain 호출 
+
+2025-02-25 18:27:34 - LiveReload server is running on port 35729
+2025-02-25 18:27:34 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:27:34 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:27:34 - Started RoadmakerApplication in 2.422 seconds (process running for 2.643)
+2025-02-25 18:27:51 - Starting RoadmakerApplication using Java 17.0.12 with PID 27680 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:27:51 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:27:51 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:27:51 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:27:52 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:27:52 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:27:52 - Starting service [Tomcat]
+2025-02-25 18:27:52 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:27:52 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:27:52 - Root WebApplicationContext: initialization completed in 1063 ms
+2025-02-25 18:27:52 - SecurityConfig 호출 : 
+2025-02-25 18:27:53 - SecurityFilterChain 호출 
+
+2025-02-25 18:27:53 - LiveReload server is running on port 35729
+2025-02-25 18:27:53 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:27:53 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:27:53 - Started RoadmakerApplication in 2.853 seconds (process running for 3.103)
+2025-02-25 18:28:47 - Starting RoadmakerApplication using Java 17.0.12 with PID 29172 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:28:47 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:28:47 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:28:47 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:28:48 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:28:48 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:28:48 - Starting service [Tomcat]
+2025-02-25 18:28:48 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:28:48 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:28:48 - Root WebApplicationContext: initialization completed in 943 ms
+2025-02-25 18:28:48 - SecurityConfig 호출 : 
+2025-02-25 18:28:48 - SecurityFilterChain 호출 
+
+2025-02-25 18:28:49 - LiveReload server is running on port 35729
+2025-02-25 18:28:49 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:28:49 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:28:49 - Started RoadmakerApplication in 2.836 seconds (process running for 3.08)
+2025-02-25 18:29:19 - Starting RoadmakerApplication using Java 17.0.12 with PID 26944 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:29:19 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:29:19 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:29:19 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:29:20 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:29:20 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:29:20 - Starting service [Tomcat]
+2025-02-25 18:29:20 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:29:20 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:29:20 - Root WebApplicationContext: initialization completed in 1038 ms
+2025-02-25 18:29:20 - SecurityConfig 호출 : 
+2025-02-25 18:29:21 - SecurityFilterChain 호출 
+
+2025-02-25 18:29:22 - LiveReload server is running on port 35729
+2025-02-25 18:29:22 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:29:22 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:29:22 - Started RoadmakerApplication in 2.872 seconds (process running for 3.101)
+2025-02-25 18:29:47 - Starting RoadmakerApplication using Java 17.0.12 with PID 2776 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:29:47 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:29:47 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:29:47 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:29:48 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:29:48 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:29:48 - Starting service [Tomcat]
+2025-02-25 18:29:48 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:29:48 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:29:48 - Root WebApplicationContext: initialization completed in 998 ms
+2025-02-25 18:29:48 - SecurityConfig 호출 : 
+2025-02-25 18:29:49 - SecurityFilterChain 호출 
+
+2025-02-25 18:29:49 - LiveReload server is running on port 35729
+2025-02-25 18:29:49 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:29:49 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:29:49 - Started RoadmakerApplication in 2.804 seconds (process running for 3.023)
+2025-02-25 18:30:44 - Starting RoadmakerApplication using Java 17.0.12 with PID 7396 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:30:44 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:30:44 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:30:44 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:30:45 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:30:45 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:30:45 - Starting service [Tomcat]
+2025-02-25 18:30:45 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:30:45 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:30:45 - Root WebApplicationContext: initialization completed in 1027 ms
+2025-02-25 18:30:46 - SecurityConfig 호출 : 
+2025-02-25 18:30:46 - SecurityFilterChain 호출 
+
+2025-02-25 18:30:47 - LiveReload server is running on port 35729
+2025-02-25 18:30:47 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:30:47 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:30:47 - Started RoadmakerApplication in 2.771 seconds (process running for 3.021)
+2025-02-25 18:31:30 - Starting RoadmakerApplication using Java 17.0.12 with PID 27488 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:31:30 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:31:30 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:31:30 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:31:31 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:31:31 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:31:31 - Starting service [Tomcat]
+2025-02-25 18:31:31 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:31:31 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:31:31 - Root WebApplicationContext: initialization completed in 1031 ms
+2025-02-25 18:31:31 - SecurityConfig 호출 : 
+2025-02-25 18:31:31 - SecurityFilterChain 호출 
+
+2025-02-25 18:31:32 - LiveReload server is running on port 35729
+2025-02-25 18:31:32 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:31:32 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:31:32 - Started RoadmakerApplication in 2.901 seconds (process running for 3.129)
+2025-02-25 18:32:22 - Starting RoadmakerApplication using Java 17.0.12 with PID 23272 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:32:22 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:32:22 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:32:22 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:32:23 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:32:23 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:32:23 - Starting service [Tomcat]
+2025-02-25 18:32:23 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:32:23 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:32:23 - Root WebApplicationContext: initialization completed in 1016 ms
+2025-02-25 18:32:23 - SecurityConfig 호출 : 
+2025-02-25 18:32:24 - SecurityFilterChain 호출 
+
+2025-02-25 18:32:24 - LiveReload server is running on port 35729
+2025-02-25 18:32:24 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:32:24 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:32:24 - Started RoadmakerApplication in 2.838 seconds (process running for 3.071)
+2025-02-25 18:33:05 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25 18:33:05 - Initializing Servlet 'dispatcherServlet'
+2025-02-25 18:33:05 - Completed initialization in 1 ms
+2025-02-25 18:33:05 - JwtRequestFilter 호출
+2025-02-25 18:33:05 - JwtRequestFilter 호출
+2025-02-25 18:33:05 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-25 18:33:05 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-25 18:33:05 - HikariPool-1 - Starting...
+2025-02-25 18:33:10 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b8efbc9
+2025-02-25 18:33:10 - HikariPool-1 - Start completed.
+2025-02-25 18:39:11 - Starting RoadmakerApplication using Java 17.0.12 with PID 29236 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-25 18:39:11 - No active profile set, falling back to 1 default profile: "default"
+2025-02-25 18:39:11 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-25 18:39:11 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-25 18:39:12 - Tomcat initialized with port 8080 (http)
+2025-02-25 18:39:12 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:39:12 - Starting service [Tomcat]
+2025-02-25 18:39:12 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-25 18:39:12 - Initializing Spring embedded WebApplicationContext
+2025-02-25 18:39:12 - Root WebApplicationContext: initialization completed in 1054 ms
+2025-02-25 18:39:12 - SecurityConfig 호출 : 
+2025-02-25 18:39:12 - SecurityFilterChain 호출 
+
+2025-02-25 18:39:13 - LiveReload server is running on port 35729
+2025-02-25 18:39:13 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-25 18:39:13 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-25 18:39:13 - Started RoadmakerApplication in 2.828 seconds (process running for 3.06)
+2025-02-25 18:48:47 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-25 18:48:47 - Initializing Servlet 'dispatcherServlet'
+2025-02-25 18:48:47 - Completed initialization in 1 ms
+2025-02-25 18:48:47 - JwtRequestFilter 호출
+2025-02-25 18:48:47 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-25 18:48:47 - HikariPool-1 - Starting...
+2025-02-25 18:48:52 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2329a76
+2025-02-25 18:48:52 - HikariPool-1 - Start completed.
+2025-02-25 18:48:52 - JwtRequestFilter 호출
+2025-02-25 18:48:52 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-25 18:48:59 - JwtRequestFilter 호출
+2025-02-25 18:48:59 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-25 18:48:59 - AdminDTO(searchWord=null, selectedDestinations=null, keyuid=null, keymid=null, keyctg1=지역, keyctg2=RIr, keyword=, afterValue=랄라, changed=keyctg2, destiid=null, desticrawlid=null, destiname=null, destidesc=null, destiaddress=null, destiholid=null, destiopenhr=null, destiparkavail=null, desticontact=null, destiregdate=null, destiappear=null, imgsname1=null, imgsname2=null, imgsname3=null, imgsname4=null, imgfname1=null, imgfname2=null, imgfname3=null, imgfname4=null, destilongit=null, destilatit=null)
+2025-02-25 18:48:59 - JwtRequestFilter 호출
+2025-02-25 18:48:59 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-26 16:22:15 - Starting RoadmakerApplication using Java 17.0.12 with PID 16056 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-26 16:22:15 - No active profile set, falling back to 1 default profile: "default"
+2025-02-26 16:22:15 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-26 16:22:15 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-26 16:22:18 - Tomcat initialized with port 8080 (http)
+2025-02-26 16:22:18 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-26 16:22:18 - Starting service [Tomcat]
+2025-02-26 16:22:18 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-26 16:22:18 - Initializing Spring embedded WebApplicationContext
+2025-02-26 16:22:18 - Root WebApplicationContext: initialization completed in 3383 ms
+2025-02-26 16:22:18 - SecurityConfig 호출 : 
+2025-02-26 16:22:19 - SecurityFilterChain 호출 
+
+2025-02-26 16:22:20 - LiveReload server is running on port 35729
+2025-02-26 16:22:20 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-26 16:22:20 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-26 16:22:20 - Started RoadmakerApplication in 6.246 seconds (process running for 6.871)
+2025-02-26 16:24:05 - Starting RoadmakerApplication using Java 17.0.12 with PID 26076 (D:\ROADMAKER\backend\build\classes\java\main started by ict-07 in D:\ROADMAKER\backend)
+2025-02-26 16:24:05 - No active profile set, falling back to 1 default profile: "default"
+2025-02-26 16:24:05 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-26 16:24:05 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-26 16:24:07 - Tomcat initialized with port 8080 (http)
+2025-02-26 16:24:07 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-26 16:24:07 - Starting service [Tomcat]
+2025-02-26 16:24:07 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-26 16:24:07 - Initializing Spring embedded WebApplicationContext
+2025-02-26 16:24:07 - Root WebApplicationContext: initialization completed in 1304 ms
+2025-02-26 16:24:07 - SecurityConfig 호출 : 
+2025-02-26 16:24:08 - SecurityFilterChain 호출 
+
+2025-02-26 16:24:08 - LiveReload server is running on port 35729
+2025-02-26 16:24:08 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-26 16:24:08 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-26 16:24:08 - Started RoadmakerApplication in 3.472 seconds (process running for 3.859)
+2025-02-26 18:35:59 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-26 18:35:59 - Graceful shutdown complete
