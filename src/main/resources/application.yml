@@ -2,6 +2,13 @@
 spring:
   application:
     name: roadmaker
+  data:
+    elasticsearch:
+      client:
+        rest:
+          uris: http://localhost:9200
+      connection-timeout: 1000    # 연결 타임아웃 (ms)
+      read-timeout: 1000          # 읽기 타임아웃 (ms)
   output:
     ansi:
       enabled: always

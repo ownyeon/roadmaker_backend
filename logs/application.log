@@ -330,3 +330,524 @@
 2025-02-26 16:24:08 - Started RoadmakerApplication in 3.472 seconds (process running for 3.859)
 2025-02-26 18:35:59 - Commencing graceful shutdown. Waiting for active requests to complete
 2025-02-26 18:35:59 - Graceful shutdown complete
+2025-02-26 23:52:57 - Starting RoadmakerApplication using Java 17.0.12 with PID 23384 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-26 23:52:57 - No active profile set, falling back to 1 default profile: "default"
+2025-02-26 23:52:57 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-26 23:52:57 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-26 23:52:59 - Tomcat initialized with port 8080 (http)
+2025-02-26 23:52:59 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-26 23:52:59 - Starting service [Tomcat]
+2025-02-26 23:52:59 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-26 23:52:59 - Initializing Spring embedded WebApplicationContext
+2025-02-26 23:52:59 - Root WebApplicationContext: initialization completed in 1817 ms
+2025-02-26 23:52:59 - SecurityConfig 호출 : 
+2025-02-26 23:53:00 - SecurityFilterChain 호출 
+
+2025-02-26 23:53:01 - LiveReload server is running on port 35729
+2025-02-26 23:53:01 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-26 23:53:01 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-26 23:53:01 - Started RoadmakerApplication in 4.586 seconds (process running for 5.229)
+2025-02-27 00:19:01 - Starting RoadmakerApplication using Java 17.0.12 with PID 4352 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:19:01 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:19:01 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:19:01 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:19:02 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:19:02 - Finished Spring Data repository scanning in 15 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:19:03 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:19:03 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:19:03 - Starting service [Tomcat]
+2025-02-27 00:19:03 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:19:03 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:19:03 - Root WebApplicationContext: initialization completed in 1155 ms
+2025-02-27 00:19:03 - SecurityConfig 호출 : 
+2025-02-27 00:19:03 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'elasticsearchController' defined in file [D:\RoadMaker\back\build\classes\java\main\com\roadmaker\f_hwangjinsang\controller\elasticsearch\ElasticsearchController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.springframework.data.elasticsearch.client.erhlc.RestClients$ElasticsearchRestClient' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-02-27 00:19:03 - Stopping service [Tomcat]
+2025-02-27 00:19:03 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-27 00:19:03 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.roadmaker.f_hwangjinsang.controller.elasticsearch.ElasticsearchController required a bean of type 'org.springframework.data.elasticsearch.client.erhlc.RestClients$ElasticsearchRestClient' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.data.elasticsearch.client.erhlc.RestClients$ElasticsearchRestClient' in your configuration.
+
+2025-02-27 00:19:18 - Starting RoadmakerApplication using Java 17.0.12 with PID 2336 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in d:\RoadMaker\back)
+2025-02-27 00:19:18 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:19:18 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:19:18 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:19:19 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:19:19 - Finished Spring Data repository scanning in 12 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:19:19 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:19:19 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:19:19 - Starting service [Tomcat]
+2025-02-27 00:19:19 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:19:19 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:19:19 - Root WebApplicationContext: initialization completed in 1175 ms
+2025-02-27 00:19:19 - SecurityConfig 호출 : 
+2025-02-27 00:19:20 - SecurityFilterChain 호출 
+
+2025-02-27 00:19:21 - LiveReload server is running on port 35729
+2025-02-27 00:19:21 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:19:21 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:19:21 - Started RoadmakerApplication in 3.702 seconds (process running for 4.331)
+2025-02-27 00:19:31 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:19:31 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:19:31 - Completed initialization in 0 ms
+2025-02-27 00:19:31 - JwtRequestFilter 호출
+2025-02-27 00:19:31 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:19:31 - JwtRequestFilter 호출
+2025-02-27 00:19:31 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:20:26 - JwtRequestFilter 호출
+2025-02-27 00:20:26 - JwtRequestFilter 호출
+2025-02-27 00:20:26 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:20:26 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:22:49 - JwtRequestFilter 호출
+2025-02-27 00:22:49 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:22:58 - JwtRequestFilter 호출
+2025-02-27 00:22:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:23:00 - JwtRequestFilter 호출
+2025-02-27 00:23:00 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:23:00 - JwtRequestFilter 호출
+2025-02-27 00:23:00 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:09 - Starting RoadmakerApplication using Java 17.0.12 with PID 23828 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:24:09 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:24:09 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:24:09 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:24:10 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:24:10 - Finished Spring Data repository scanning in 14 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:24:10 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:24:10 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:24:10 - Starting service [Tomcat]
+2025-02-27 00:24:10 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:24:10 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:24:10 - Root WebApplicationContext: initialization completed in 1426 ms
+2025-02-27 00:24:11 - SecurityConfig 호출 : 
+2025-02-27 00:24:11 - SecurityFilterChain 호출 
+
+2025-02-27 00:24:12 - LiveReload server is running on port 35729
+2025-02-27 00:24:12 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:24:12 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:24:12 - Started RoadmakerApplication in 4.142 seconds (process running for 4.559)
+2025-02-27 00:24:14 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:24:14 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:24:14 - Completed initialization in 1 ms
+2025-02-27 00:24:14 - JwtRequestFilter 호출
+2025-02-27 00:24:14 - JwtRequestFilter 호출
+2025-02-27 00:24:14 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:14 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:19 - JwtRequestFilter 호출
+2025-02-27 00:24:19 - JwtRequestFilter 호출
+2025-02-27 00:24:19 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:19 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:37 - Starting RoadmakerApplication using Java 17.0.12 with PID 26500 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:24:37 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:24:37 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:24:37 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:24:37 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:24:37 - Finished Spring Data repository scanning in 12 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:24:38 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:24:38 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:24:38 - Starting service [Tomcat]
+2025-02-27 00:24:38 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:24:38 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:24:38 - Root WebApplicationContext: initialization completed in 1297 ms
+2025-02-27 00:24:38 - SecurityConfig 호출 : 
+2025-02-27 00:24:39 - SecurityFilterChain 호출 
+
+2025-02-27 00:24:40 - LiveReload server is running on port 35729
+2025-02-27 00:24:40 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:24:40 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:24:40 - Started RoadmakerApplication in 3.901 seconds (process running for 4.303)
+2025-02-27 00:24:48 - Starting RoadmakerApplication using Java 17.0.12 with PID 25596 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:24:48 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:24:48 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:24:48 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:24:49 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:24:49 - Finished Spring Data repository scanning in 13 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:24:49 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:24:49 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:24:49 - Starting service [Tomcat]
+2025-02-27 00:24:49 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:24:50 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:24:50 - Root WebApplicationContext: initialization completed in 1479 ms
+2025-02-27 00:24:50 - SecurityConfig 호출 : 
+2025-02-27 00:24:50 - SecurityFilterChain 호출 
+
+2025-02-27 00:24:51 - LiveReload server is running on port 35729
+2025-02-27 00:24:52 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:24:52 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:24:52 - Started RoadmakerApplication in 4.108 seconds (process running for 4.505)
+2025-02-27 00:24:53 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:24:53 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:24:53 - Completed initialization in 0 ms
+2025-02-27 00:24:53 - JwtRequestFilter 호출
+2025-02-27 00:24:53 - JwtRequestFilter 호출
+2025-02-27 00:24:53 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:53 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:56 - JwtRequestFilter 호출
+2025-02-27 00:24:56 - JwtRequestFilter 호출
+2025-02-27 00:24:56 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:56 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:58 - JwtRequestFilter 호출
+2025-02-27 00:24:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:24:58 - JwtRequestFilter 호출
+2025-02-27 00:24:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:25:24 - Starting RoadmakerApplication using Java 17.0.12 with PID 26748 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in d:\RoadMaker\back)
+2025-02-27 00:25:24 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:25:24 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:25:24 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:25:24 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:25:24 - Finished Spring Data repository scanning in 14 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:25:25 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:25:25 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:25:25 - Starting service [Tomcat]
+2025-02-27 00:25:25 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:25:25 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:25:25 - Root WebApplicationContext: initialization completed in 1193 ms
+2025-02-27 00:25:25 - SecurityConfig 호출 : 
+2025-02-27 00:25:26 - SecurityFilterChain 호출 
+
+2025-02-27 00:25:27 - LiveReload server is running on port 35729
+2025-02-27 00:25:27 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:25:27 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:25:27 - Started RoadmakerApplication in 3.873 seconds (process running for 4.615)
+2025-02-27 00:25:36 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:25:36 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:25:36 - Completed initialization in 1 ms
+2025-02-27 00:25:36 - JwtRequestFilter 호출
+2025-02-27 00:25:36 - JwtRequestFilter 호출
+2025-02-27 00:25:36 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:25:36 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:25:55 - JwtRequestFilter 호출
+2025-02-27 00:25:55 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:25:55 - JwtRequestFilter 호출
+2025-02-27 00:25:55 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:25:58 - JwtRequestFilter 호출
+2025-02-27 00:25:58 - JwtRequestFilter 호출
+2025-02-27 00:25:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:25:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:30:16 - JwtRequestFilter 호출
+2025-02-27 00:30:16 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:30:17 - JwtRequestFilter 호출
+2025-02-27 00:30:17 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:30:45 - Starting RoadmakerApplication using Java 17.0.12 with PID 10120 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:30:45 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:30:45 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:30:45 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:30:46 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:30:46 - Finished Spring Data repository scanning in 16 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:30:46 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:30:46 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:30:46 - Starting service [Tomcat]
+2025-02-27 00:30:46 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:30:46 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:30:46 - Root WebApplicationContext: initialization completed in 1311 ms
+2025-02-27 00:30:47 - SecurityConfig 호출 : 
+2025-02-27 00:30:47 - SecurityFilterChain 호출 
+
+2025-02-27 00:30:48 - LiveReload server is running on port 35729
+2025-02-27 00:30:48 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:30:48 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:30:48 - Started RoadmakerApplication in 3.876 seconds (process running for 4.287)
+2025-02-27 00:31:42 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:31:42 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:31:42 - Completed initialization in 1 ms
+2025-02-27 00:31:42 - JwtRequestFilter 호출
+2025-02-27 00:31:42 - JwtRequestFilter 호출
+2025-02-27 00:31:42 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:31:42 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:31:42 - HikariPool-1 - Starting...
+2025-02-27 00:31:42 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@484e14a5
+2025-02-27 00:31:42 - HikariPool-1 - Start completed.
+2025-02-27 00:32:07 - JwtRequestFilter 호출
+2025-02-27 00:32:07 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:32:13 - JwtRequestFilter 호출
+2025-02-27 00:32:13 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:32:13 - JwtRequestFilter 호출
+2025-02-27 00:32:13 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:32:22 - JwtRequestFilter 호출
+2025-02-27 00:32:22 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:33:04 - JwtRequestFilter 호출
+2025-02-27 00:33:04 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:33:09 - JwtRequestFilter 호출
+2025-02-27 00:33:09 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:33:09 - JwtRequestFilter 호출
+2025-02-27 00:33:09 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:34:21 - Starting RoadmakerApplication using Java 17.0.12 with PID 28080 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:34:21 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:34:21 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:34:21 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:34:21 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:34:22 - Finished Spring Data repository scanning in 17 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:34:22 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:34:22 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:34:22 - Starting service [Tomcat]
+2025-02-27 00:34:22 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:34:22 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:34:22 - Root WebApplicationContext: initialization completed in 1433 ms
+2025-02-27 00:34:22 - SecurityConfig 호출 : 
+2025-02-27 00:34:23 - SecurityFilterChain 호출 
+
+2025-02-27 00:34:24 - LiveReload server is running on port 35729
+2025-02-27 00:34:24 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:34:24 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:34:24 - Started RoadmakerApplication in 3.951 seconds (process running for 4.296)
+2025-02-27 00:34:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:34:25 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:34:25 - Completed initialization in 1 ms
+2025-02-27 00:34:25 - JwtRequestFilter 호출
+2025-02-27 00:34:25 - JwtRequestFilter 호출
+2025-02-27 00:34:25 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:34:25 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:34:25 - HikariPool-1 - Starting...
+2025-02-27 00:34:26 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2dce653c
+2025-02-27 00:34:26 - HikariPool-1 - Start completed.
+2025-02-27 00:34:30 - JwtRequestFilter 호출
+2025-02-27 00:34:30 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:34:30 - AdminDTO(searchWord=null, selectedDestinations=null, keyuid=null, keymid=null, keyctg1=지역, keyctg2=냥, keyword=, afterValue=null, changed=null, destiid=null, desticrawlid=null, destiname=null, destidesc=null, destiaddress=null, destiholid=null, destiopenhr=null, destiparkavail=null, desticontact=null, destiregdate=null, destiappear=null, imgsname1=null, imgsname2=null, imgsname3=null, imgsname4=null, imgfname1=null, imgfname2=null, imgfname3=null, imgfname4=null, destilongit=null, destilatit=null)
+2025-02-27 00:34:30 - JwtRequestFilter 호출
+2025-02-27 00:34:30 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:34:58 - JwtRequestFilter 호출
+2025-02-27 00:34:58 - JwtRequestFilter 호출
+2025-02-27 00:34:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:34:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:35:58 - JwtRequestFilter 호출
+2025-02-27 00:35:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:35:58 - AdminDTO(searchWord=null, selectedDestinations=null, keyuid=null, keymid=null, keyctg1=지역, keyctg2=제주, keyword=냥, afterValue=null, changed=null, destiid=null, desticrawlid=null, destiname=null, destidesc=null, destiaddress=null, destiholid=null, destiopenhr=null, destiparkavail=null, desticontact=null, destiregdate=null, destiappear=null, imgsname1=null, imgsname2=null, imgsname3=null, imgsname4=null, imgfname1=null, imgfname2=null, imgfname3=null, imgfname4=null, destilongit=null, destilatit=null)
+2025-02-27 00:35:58 - JwtRequestFilter 호출
+2025-02-27 00:35:58 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:01 - JwtRequestFilter 호출
+2025-02-27 00:37:01 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:01 - AdminDTO(searchWord=null, selectedDestinations=null, keyuid=null, keymid=null, keyctg1=지역, keyctg2=제주, keyword=ㅎㅎ, afterValue=null, changed=null, destiid=null, desticrawlid=null, destiname=null, destidesc=null, destiaddress=null, destiholid=null, destiopenhr=null, destiparkavail=null, desticontact=null, destiregdate=null, destiappear=null, imgsname1=null, imgsname2=null, imgsname3=null, imgsname4=null, imgfname1=null, imgfname2=null, imgfname3=null, imgfname4=null, destilongit=null, destilatit=null)
+2025-02-27 00:37:01 - JwtRequestFilter 호출
+2025-02-27 00:37:01 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:09 - Starting RoadmakerApplication using Java 17.0.12 with PID 27868 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:37:09 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:37:09 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:37:09 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:37:10 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:37:10 - Finished Spring Data repository scanning in 16 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:37:11 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:37:11 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:37:11 - Starting service [Tomcat]
+2025-02-27 00:37:11 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:37:11 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:37:11 - Root WebApplicationContext: initialization completed in 1478 ms
+2025-02-27 00:37:11 - SecurityConfig 호출 : 
+2025-02-27 00:37:12 - SecurityFilterChain 호출 
+
+2025-02-27 00:37:13 - LiveReload server is running on port 35729
+2025-02-27 00:37:13 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:37:13 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:37:13 - Started RoadmakerApplication in 4.033 seconds (process running for 4.42)
+2025-02-27 00:37:13 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:37:13 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:37:13 - Completed initialization in 1 ms
+2025-02-27 00:37:13 - JwtRequestFilter 호출
+2025-02-27 00:37:13 - JwtRequestFilter 호출
+2025-02-27 00:37:13 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:13 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:13 - AdminDTO(searchWord=null, selectedDestinations=null, keyuid=null, keymid=null, keyctg1=테마, keyctg2=테마키워드, keyword=ㅎㅇㅎㅇ, afterValue=null, changed=null, destiid=null, desticrawlid=null, destiname=null, destidesc=null, destiaddress=null, destiholid=null, destiopenhr=null, destiparkavail=null, desticontact=null, destiregdate=null, destiappear=null, imgsname1=null, imgsname2=null, imgsname3=null, imgsname4=null, imgfname1=null, imgfname2=null, imgfname3=null, imgfname4=null, destilongit=null, destilatit=null)
+2025-02-27 00:37:13 - AdminDTO(searchWord=null, selectedDestinations=null, keyuid=null, keymid=null, keyctg1=테마, keyctg2=테마키워드, keyword=ㅎㅇㅎㅇ, afterValue=null, changed=null, destiid=null, desticrawlid=null, destiname=null, destidesc=null, destiaddress=null, destiholid=null, destiopenhr=null, destiparkavail=null, desticontact=null, destiregdate=null, destiappear=null, imgsname1=null, imgsname2=null, imgsname3=null, imgsname4=null, imgfname1=null, imgfname2=null, imgfname3=null, imgfname4=null, destilongit=null, destilatit=null)
+2025-02-27 00:37:13 - HikariPool-1 - Starting...
+2025-02-27 00:37:13 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@433186f9
+2025-02-27 00:37:13 - HikariPool-1 - Start completed.
+2025-02-27 00:37:25 - JwtRequestFilter 호출
+2025-02-27 00:37:25 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:25 - JwtRequestFilter 호출
+2025-02-27 00:37:25 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:25 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.roadmaker.a_common.dto.DataDTO com.roadmaker.f_hwangjinsang.controller.admin.KeywordController.getDestinationsForKeyword(com.roadmaker.f_hwangjinsang.dto.admin.AdminDTO)]
+2025-02-27 00:37:25 - JwtRequestFilter 호출
+2025-02-27 00:37:25 - JwtRequestFilter 호출
+2025-02-27 00:37:25 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:25 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:37:25 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.roadmaker.a_common.dto.DataDTO com.roadmaker.f_hwangjinsang.controller.admin.KeywordController.getDestinationsForKeyword(com.roadmaker.f_hwangjinsang.dto.admin.AdminDTO)]
+2025-02-27 00:37:54 - Starting RoadmakerApplication using Java 17.0.12 with PID 29184 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:37:54 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:37:54 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:37:54 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:37:55 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:37:55 - Finished Spring Data repository scanning in 12 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:37:56 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:37:56 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:37:56 - Starting service [Tomcat]
+2025-02-27 00:37:56 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:37:56 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:37:56 - Root WebApplicationContext: initialization completed in 1611 ms
+2025-02-27 00:37:56 - SecurityConfig 호출 : 
+2025-02-27 00:37:57 - SecurityFilterChain 호출 
+
+2025-02-27 00:37:58 - LiveReload server is running on port 35729
+2025-02-27 00:37:58 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:37:58 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:37:58 - Started RoadmakerApplication in 4.403 seconds (process running for 4.761)
+2025-02-27 00:38:00 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:38:00 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:38:00 - Completed initialization in 1 ms
+2025-02-27 00:38:00 - JwtRequestFilter 호출
+2025-02-27 00:38:00 - JwtRequestFilter 호출
+2025-02-27 00:38:00 - JwtRequestFilter 호출
+2025-02-27 00:38:00 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:00 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:00 - JwtRequestFilter 호출
+2025-02-27 00:38:00 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:00 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:00 - 서비스 진입
+2025-02-27 00:38:00 - 서비스 진입
+2025-02-27 00:38:00 - HikariPool-1 - Starting...
+2025-02-27 00:38:00 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@14cd91ad
+2025-02-27 00:38:00 - HikariPool-1 - Start completed.
+2025-02-27 00:38:02 - JwtRequestFilter 호출
+2025-02-27 00:38:02 - JwtRequestFilter 호출
+2025-02-27 00:38:02 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:02 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:08 - JwtRequestFilter 호출
+2025-02-27 00:38:08 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:08 - JwtRequestFilter 호출
+2025-02-27 00:38:08 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:13 - JwtRequestFilter 호출
+2025-02-27 00:38:13 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:13 - JwtRequestFilter 호출
+2025-02-27 00:38:13 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:21 - JwtRequestFilter 호출
+2025-02-27 00:38:21 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:21 - JwtRequestFilter 호출
+2025-02-27 00:38:21 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:26 - JwtRequestFilter 호출
+2025-02-27 00:38:26 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:26 - JwtRequestFilter 호출
+2025-02-27 00:38:26 - JwtRequestFilter 호출
+2025-02-27 00:38:26 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:26 - JwtRequestFilter 호출
+2025-02-27 00:38:26 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:26 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:26 - 서비스 진입
+2025-02-27 00:38:26 - 서비스 진입
+2025-02-27 00:38:27 - JwtRequestFilter 호출
+2025-02-27 00:38:27 - JwtRequestFilter 호출
+2025-02-27 00:38:27 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:27 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:36 - JwtRequestFilter 호출
+2025-02-27 00:38:36 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:49 - JwtRequestFilter 호출
+2025-02-27 00:38:49 - JwtRequestFilter 호출
+2025-02-27 00:38:49 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:49 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:49 - JwtRequestFilter 호출
+2025-02-27 00:38:49 - JwtRequestFilter 호출
+2025-02-27 00:38:49 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:38:49 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:17 - JwtRequestFilter 호출
+2025-02-27 00:39:17 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:17 - JwtRequestFilter 호출
+2025-02-27 00:39:17 - JwtRequestFilter 호출
+2025-02-27 00:39:17 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:17 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:17 - JwtRequestFilter 호출
+2025-02-27 00:39:17 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:22 - Starting RoadmakerApplication using Java 17.0.12 with PID 29964 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:39:22 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:39:22 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:39:22 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:39:23 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:39:23 - Finished Spring Data repository scanning in 15 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:39:23 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:39:23 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:39:23 - Starting service [Tomcat]
+2025-02-27 00:39:23 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:39:23 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:39:23 - Root WebApplicationContext: initialization completed in 1372 ms
+2025-02-27 00:39:24 - SecurityConfig 호출 : 
+2025-02-27 00:39:24 - SecurityFilterChain 호출 
+
+2025-02-27 00:39:25 - LiveReload server is running on port 35729
+2025-02-27 00:39:25 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:39:25 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:39:25 - Started RoadmakerApplication in 3.968 seconds (process running for 4.308)
+2025-02-27 00:39:27 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:39:27 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:39:27 - Completed initialization in 0 ms
+2025-02-27 00:39:27 - JwtRequestFilter 호출
+2025-02-27 00:39:27 - JwtRequestFilter 호출
+2025-02-27 00:39:27 - JwtRequestFilter 호출
+2025-02-27 00:39:27 - JwtRequestFilter 호출
+2025-02-27 00:39:27 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:27 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:27 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:27 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:39:27 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.roadmaker.a_common.dto.DataDTO com.roadmaker.f_hwangjinsang.controller.admin.KeywordController.getDestinationsForKeyword(com.roadmaker.f_hwangjinsang.dto.admin.AdminDTO)]
+2025-02-27 00:39:27 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.roadmaker.a_common.dto.DataDTO com.roadmaker.f_hwangjinsang.controller.admin.KeywordController.getDestinationsForKeyword(com.roadmaker.f_hwangjinsang.dto.admin.AdminDTO)]
+2025-02-27 00:40:30 - JwtRequestFilter 호출
+2025-02-27 00:40:30 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:40:30 - HikariPool-1 - Starting...
+2025-02-27 00:40:30 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b5434f9
+2025-02-27 00:40:30 - HikariPool-1 - Start completed.
+2025-02-27 00:40:30 - JwtRequestFilter 호출
+2025-02-27 00:40:30 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:40:35 - JwtRequestFilter 호출
+2025-02-27 00:40:35 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:40:35 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "지역"]
+2025-02-27 00:40:56 - JwtRequestFilter 호출
+2025-02-27 00:40:56 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:40:56 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-02-27 00:41:01 - JwtRequestFilter 호출
+2025-02-27 00:41:01 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:01 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-02-27 00:41:07 - Starting RoadmakerApplication using Java 17.0.12 with PID 29816 (D:\RoadMaker\back\build\classes\java\main started by hjs93 in D:\RoadMaker\back)
+2025-02-27 00:41:07 - No active profile set, falling back to 1 default profile: "default"
+2025-02-27 00:41:07 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-27 00:41:07 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-27 00:41:08 - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-27 00:41:08 - Finished Spring Data repository scanning in 13 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-27 00:41:09 - Tomcat initialized with port 8080 (http)
+2025-02-27 00:41:09 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:41:09 - Starting service [Tomcat]
+2025-02-27 00:41:09 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-27 00:41:09 - Initializing Spring embedded WebApplicationContext
+2025-02-27 00:41:09 - Root WebApplicationContext: initialization completed in 1400 ms
+2025-02-27 00:41:09 - SecurityConfig 호출 : 
+2025-02-27 00:41:10 - SecurityFilterChain 호출 
+
+2025-02-27 00:41:11 - LiveReload server is running on port 35729
+2025-02-27 00:41:11 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-27 00:41:11 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-27 00:41:11 - Started RoadmakerApplication in 3.871 seconds (process running for 4.29)
+2025-02-27 00:41:11 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-27 00:41:11 - Initializing Servlet 'dispatcherServlet'
+2025-02-27 00:41:11 - Completed initialization in 0 ms
+2025-02-27 00:41:11 - JwtRequestFilter 호출
+2025-02-27 00:41:11 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:11 - AdminDTO(searchWord=null, selectedDestinations=null, keyuid=null, keymid=null, keyctg1=지역, keyctg2=서울, keyword=, afterValue=서울서, changed=keyctg2, destiid=null, desticrawlid=null, destiname=null, destidesc=null, destiaddress=null, destiholid=null, destiopenhr=null, destiparkavail=null, desticontact=null, destiregdate=null, destiappear=null, imgsname1=null, imgsname2=null, imgsname3=null, imgsname4=null, imgfname1=null, imgfname2=null, imgfname3=null, imgfname4=null, destilongit=null, destilatit=null)
+2025-02-27 00:41:11 - HikariPool-1 - Starting...
+2025-02-27 00:41:11 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46e5df46
+2025-02-27 00:41:11 - HikariPool-1 - Start completed.
+2025-02-27 00:41:11 - JwtRequestFilter 호출
+2025-02-27 00:41:11 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:15 - JwtRequestFilter 호출
+2025-02-27 00:41:15 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:15 - AdminDTO(searchWord=null, selectedDestinations=null, keyuid=null, keymid=null, keyctg1=지역, keyctg2=서울서, keyword=, afterValue=서울, changed=keyctg2, destiid=null, desticrawlid=null, destiname=null, destidesc=null, destiaddress=null, destiholid=null, destiopenhr=null, destiparkavail=null, desticontact=null, destiregdate=null, destiappear=null, imgsname1=null, imgsname2=null, imgsname3=null, imgsname4=null, imgfname1=null, imgfname2=null, imgfname3=null, imgfname4=null, destilongit=null, destilatit=null)
+2025-02-27 00:41:15 - JwtRequestFilter 호출
+2025-02-27 00:41:15 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:18 - JwtRequestFilter 호출
+2025-02-27 00:41:18 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:18 - JwtRequestFilter 호출
+2025-02-27 00:41:18 - JwtRequestFilter 호출
+2025-02-27 00:41:18 - JwtRequestFilter 호출
+2025-02-27 00:41:18 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:18 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:18 - Authorization NULL 또는 Bearer 토큰이 아닙니다.
+2025-02-27 00:41:18 - 서비스 진입
+2025-02-27 00:41:18 - 서비스 진입
+2025-02-27 00:44:51 - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-27 00:44:52 - Graceful shutdown complete
+2025-02-27 00:44:52 - HikariPool-1 - Shutdown initiated...
+2025-02-27 00:44:52 - HikariPool-1 - Shutdown completed.
