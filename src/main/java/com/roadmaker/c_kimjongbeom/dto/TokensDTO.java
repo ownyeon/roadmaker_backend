@@ -6,17 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class RegisterRequest {
-    
-    private String email;       // 아이디(이메일)
-    private String password;    // 비밀번호(토큰)
-    private String nickname;    // 닉네임
-    private String gender;      // 성별
-    private Integer age;        // 나이
-
+public class TokensDTO {
+    private String accessToken;
+    private String refreshToken;
 }
 
 

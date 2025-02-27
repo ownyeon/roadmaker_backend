@@ -1,0 +1,196 @@
+※ 리프레시 토큰 관리 테이블 추가
+CREATE TABLE refresh_tokens (
+    memId INT,                                         -- 회원 ID (Foreign Key, members 테이블의 memId)
+    refresh_token VARCHAR(255) NOT NULL,                -- Refresh Token
+    expiry_date DATETIME NOT NULL,                     -- Refresh Token의 만료일
+    PRIMARY KEY (memId),                               -- 회원 ID를 Primary Key로 설정 (회원당 하나의 Refresh Token)
+    CONSTRAINT fk_memid FOREIGN KEY (memId)            -- 회원 ID가 members 테이블의 memId를 참조하도록 설정
+        REFERENCES members(memId)                      -- 회원 ID가 유효한 회원인지 검증
+        ON DELETE CASCADE                              -- 회원 탈퇴 시 해당 회원의 Refresh Token도 자동 삭제
+        ON UPDATE CASCADE                              -- 회원 정보 업데이트 시 연동되어 자동 업데이트
+);
+=========================================================================================================
+
+
+I. 작업 흐름
+    1. 백엔드(Spring Boot)
+        - SecurityConfig에서 JWT및 OAuth2관련 보안설정
+        - 프론트엔드와 통신할 수 있도록 CORS 및 토큰 검증 설정
+    2. 프론트엔드(React, TypeScript 등)
+        - 로그인 버튼 클릭하면 백엔드의 OAuth2 인증 URL 리디렉션
+        - 사용자가 인증을 완료하면, 리디렉션된 후 토큰을 쿠키에 저장
+        - API요청에 Authorization헤더에 JWT를 포함하여 요청
+    3. 로그인 후 리디렉션
+        - 로그인 성공시 백엔드에서 JWT를 포함한 응답 전송
+        - 이 토큰을 프론트엔드에서 관리
+
+
+II. 필요사항
+    1. 백엔드
+        - OAuth2UserService
+        - JwtUtil 클래스, JwtRequestFilter
+        - Oauth2AthenticationSuccessHandler로 로그인 성공시 JWT발급
+        - SecurityConfig에서 Oauth2 및 JWT설정
+    2. 프론트엔드
+        - 로그인 요청을 OAuth2 인증 URL보내기
+        - JWT를 저장하고 API 요청시 헤더에 포함하여 전송
+        - 로그인 상태에 따라 UI처리(로그인/로그아웃)
+    3. 환경 설정
+        - SecurityConfig CORS설정
+            : 프론트엔드와 백엔드가 다른 포트에서 작업하기 때문에, CORS를 설정하여 서로의 요청을 허용하도록
+        - application.yml에서 민감정보 등 설정.
+            : URL, 비밀번호, 클라이언트 ID, 시크릿, JWT 비밀키, 액세스 토큰 및 리프레시 토큰의 유효시간 등등
+
+
+
+III. 파일 구조
+
+/src
+ ├── /main
+ │    ├── /java
+ │    │    └── /com
+ │    │         └── /roadmaker
+ │    │              ├── /a_common
+ │    │              │    ├── /config
+ │    │              │    │    └── SecurityConfig.java
+ │    │              │    └── /security
+ │    │              │         ├── JwtTokenProvider.java
+ │    │              │         └── JwtUtil.java
+ │    │              └── /c_kimjongbeom
+ │    │                   ├── /controller
+ │    │                   │    └── AuthController.java
+ │    │                   ├── /dto
+ │    │                   │    ├── DataDTO2.java
+ │    │                   │    ├── LoginDTO.java
+ │    │                   │    ├── MembersDTO.java
+ │    │                   │    ├── TokensDTO.java
+ │    │                   │    ├── TokenRefreshRequest.java
+ │    │                   │    └── AccessTokenResponse.java
+ │    │                   ├── /mapper
+ │    │                   │    └── MemberMapper.java
+ │    │                   └── /service
+ │    │                        ├── MemberService.java
+ │    │                        ├── MemberServiceImpl.java
+ │    │                        └── MyUserDetailService.java
+ │    └── /resources
+ │         └── application.yml
+ └── /build.gradle
+
+====================================================================================
+※ 로그인 및 JWT 흐름
+I. 로그인:
+    - 사용자가 로그인 시도 시, MyUserDetailService의 loadUserByUsername 메서드가 호출되어 memEmail로 회원 정보를 조회.
+    - 해당 회원 정보가 존재하면 JWT 토큰을 발급하고, 클라이언트에 반환.
+
+
+II. JWT 토큰 인증:
+    - 로그인 후 발급된 access token과 refresh token은 클라이언트에 저장.
+        (access토큰은 쿠키에, refresh token은 회원별 db로 관리)
+        ; 로그인 및 회원가입 등에서 members테이블의 mememail로 회원 정보를 호출하고 있었으나, 
+         mememail은 members테이블의 기본키가 아니어서 refresh token 관리 테이블에서는 memId를 join하여 mememail을 호출함. 
+    - 클라이언트는 서버에 요청할 때 access token을 포함시켜 인증.
+    - 만약, access token이 만료되면, refresh token을 이용해 새로운 access token을 발급.
+
+
+III. 각 파일의 역할
+    1. a_common : 공통 설정 및 보안 관련 클래스들
+        1) SecurityConfig.java
+            역할: Spring Security의 설정.
+            인증 및 권한 관리, JWT 토큰을 통한 인증 방식을 설정.
+        2) JwtTokenProvider.java
+            역할: JWT 토큰을 생성하고 검증.
+            주로 access token과 refresh token을 발급하고, 검증.
+        3) JwtUtil.java
+            역할 : JWT 토큰의 유효성을 검사하거나 필요한 데이터를 추출
+            주로 access token과 refresh token의 유효성 검사 및 토큰 데이터 추출
+
+    2. c_kimjongbeom : 비 공통 영역
+        1) controller : RESTful API 처리
+            ; AuthController.java
+        2) dto : 데이터 전송객체들. 요청과 응답에 사용되는 객체들
+            (1) LoginDTO.java : 로그인 요청을 위한 DTO
+            (2) MembersDTO.java
+            (3) TokensDTO.java : 토큰 관련 데이터 반환용 DTO
+            (4) AccessTokenResponse.java : Access토큰 관련 DTO. TokenRefreshRequest.java에 클래스로 묶음.
+            (5) TokenRefreshRequest.java : Refresh토큰 관련 DTO.
+        3) mapper : MyBatis나 다른 ORM 프레임워크를 사용할 때, SQL 매핑
+            ;MemberMapper.java
+                역할 : MyBatis를 사용해 데이터베이스와 상호작용하는 인터페이스.
+                회원 정보 조회, 저장, refresh token 처리 등을 담당하는 SQL 쿼리를 정의.
+        4) service : 비즈니스 로직을 처리
+            (1) MemberService.java
+                역할 : 회원 관련 비즈니스 로직을 담당하는 서비스 목록.
+                회원 가입, 로그인, refresh token 처리 등의 기능을 제공.
+            (2) MemberServiceImpl.java
+                역할 : MemberService의 구현체.
+            (3) MyUserDetailService.java
+                역할: Spring Security의 UserDetailsService 구현체. 
+                사용자가 제공한 이메일을 바탕으로 회원 정보를 조회하고, 인증을 위한 JWT 토큰을 생성.
+
+    3. resources : 기타 자원
+        ; application.yml : Spring Boot 애플리케이션의 환경 설정
+        
+
+===========================================================
+
+### 작성 예상 요소 **
+
+- **JWT 인증 시스템**
+  - [v] JwtTokenProvider 생성 (토큰 생성 및 검증)
+  - [v] SecurityConfig 설정 (Spring Security와 JWT 연동)
+  - [ ] 인증 실패 처리
+  - [ ] 매 요청마다 JWT 토큰 검증
+  
+- **회원 관리**
+  - [v] MemberService 작성 (회원 관련 비즈니스 로직 처리)
+  - [v] MemberServiceImpl 작성 (구체적인 비즈니스 로직 구현)
+  - [v] MemberMapper 작성 (데이터베이스와의 매핑)
+  - [ ] Member 엔티티 작성 (데이터베이스 테이블과 매핑)
+  - [v] LoginDTO 작성 (로그인 요청을 위한 DTO)
+  - [v] TokensDTO 작성 (토큰 관련 데이터 반환용 DTO)
+  - [v] MembersDTO 작성 (회원 정보 관련 DTO)
+
+- **보안 설정**
+  - [v] JWT 인증 방식 설정 (JWT 토큰으로 인증)
+  - [v] Spring Security 설정
+  - [ ] 예외 처리 로직 추가 (구체적인 예외 처리 및 예외 응답 처리)
+
+- **회원 가입 및 관리**
+  - [ ] 회원 가입 API 작성
+  - [ ] 비밀번호 암호화 처리 (회원 가입 시 비밀번호 안전하게 저장)
+
+- **토큰 갱신 및 로그아웃**
+  - [ ] 리프레시 토큰 처리 (토큰 갱신 기능)
+  - [ ] 로그아웃 API 작성 (토큰 무효화 처리)
+
+- **테스트**
+  - [ ] 서비스 단위 테스트 작성
+  - [ ] 컨트롤러 통합 테스트 작성
+
+=======================================
+### 특이사항 **
+1. JWT를 구현하면서 refresh토큰을 관리하기 위한 DB가 필요하여 별도의 테이블을 만듦.
+
+※ 리프레시 토큰 관리 테이블 추가
+CREATE TABLE refresh_tokens (
+    memId INT,                                         -- 회원 ID (Foreign Key, members 테이블의 memId)
+    refresh_token VARCHAR(255) NOT NULL,                -- Refresh Token
+    expiry_date DATETIME NOT NULL,                     -- Refresh Token의 만료일
+    PRIMARY KEY (memId),                               -- 회원 ID를 Primary Key로 설정 (회원당 하나의 Refresh Token)
+    CONSTRAINT fk_memid FOREIGN KEY (memId)            -- 회원 ID가 members 테이블의 memId를 참조하도록 설정
+        REFERENCES members(memId)                      -- 회원 ID가 유효한 회원인지 검증
+        ON DELETE CASCADE                              -- 회원 탈퇴 시 해당 회원의 Refresh Token도 자동 삭제
+        ON UPDATE CASCADE                              -- 회원 정보 업데이트 시 연동되어 자동 업데이트
+);
+
+=======================================
+### 코드 보완 요소 **
+
+1. 예외 처리 : 인증 실패 시 적절한 예외 처리
+2. 토큰 갱신 및 로그아웃 : 작성은 했으나, 충분한 테스트 및 검토 필요
+3. JWT 토큰의 만료 후 갱신할 수 있는 기능(리프레시 토큰) : 작성은 했으나, 테스트 및 검증 필요
+4. 로그아웃 처리 시 토큰을 무효화 : 검증 필요
+5. 보안 관련 설정 : 좀 더 신경쓸 수 있는 부분 검토
+6. 회원 가입 기능 : 작성했었으나, 로그인 오류 잡는 과정에서 코드를 수정한 부분이 있어 검토 필요.
+7. 소셜 로그인
+8. 이메일 인증

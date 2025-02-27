@@ -1,0 +1,60 @@
+주어진 코드는 Spring Boot를 사용한 회원 인증 시스템의 주요 구성 요소입니다. 각 파일의 기능을 간단히 설명드리겠습니다.
+
+### 1. **`MemberServiceImpl` (회원 서비스 구현)**
+
+이 클래스는 회원 정보 관리 및 처리와 관련된 비즈니스 로직을 담당합니다. 
+
+- `getMemberList()` : 모든 회원 목록을 반환합니다.
+- `getMemberDetail(String memEmail)` : 이메일을 통해 특정 회원의 정보를 반환합니다.
+- `saveRefreshToken(String memEmail, Integer memId, String refresh_token, Date expiry_date)` : 회원 이메일을 통해 `refreshToken`을 저장합니다.
+- `findRefreshToken(String memEmail)` : 회원 이메일을 통해 `refreshToken`을 찾습니다.
+- `deleteRefreshToken(String memEmail)` : 회원 이메일을 통해 `refreshToken`을 삭제합니다.
+- `insertUser(MembersDTO membersDTO)` : 회원을 새로 등록합니다.
+
+### 2. **`MyUserDetailService` (사용자 세부 정보 서비스)**
+
+이 클래스는 Spring Security의 `UserDetailsService`를 구현하여 로그인 및 인증을 위한 사용자 정보를 제공합니다.
+
+- `loadUserByUsername(String memEmail)` : 이메일로 사용자 정보를 찾아 `UserDetails` 객체를 반환합니다.
+- `registerUser(MembersDTO mDto)` : 새 사용자 등록을 위한 메소드입니다.
+
+### 3. **`MemberMapper` (MyBatis Mapper)**
+
+이 인터페이스는 MyBatis를 사용하여 DB와의 연결을 처리합니다. 회원 정보 조회, 추가, `refreshToken` 저장 및 삭제 작업을 합니다.
+
+- `findByEmail(String memEmail)` : 이메일로 회원 정보를 조회합니다.
+- `findMemIdByEmail(String memEmail)` : 이메일을 통해 회원 ID를 조회합니다.
+- `insertMember(MembersDTO mdto)` : 새 회원을 DB에 저장합니다.
+- `saveRefreshToken(Integer memId, String refresh_token, Date expiry_date)` : refresh token을 DB에 저장합니다.
+- `findRefreshToken(String memEmail)` : 이메일로 refresh token을 조회합니다.
+- `deleteRefreshToken(String memEmail)` : 이메일로 refresh token을 삭제합니다.
+
+### 4. **`AuthController` (인증 관련 API)**
+
+회원 가입, 로그인, 로그아웃 및 사용자 정보를 처리하는 API를 제공합니다.
+
+- **로그인 (`login`)** : 이메일과 비밀번호를 확인한 후, JWT 토큰을 생성하여 반환합니다.
+- **회원 정보 조회 (`postDetail`)** : 로그인된 사용자의 정보를 조회합니다. 토큰을 검증하고, 일치하는 이메일을 가진 사용자의 상세 정보를 반환합니다.
+- **로그아웃 (`postLogout`)** : 로그아웃 시 `refreshToken`을 삭제하고, 액세스 토큰을 쿠키에서 삭제합니다.
+- **회원가입 (`signUp`)** : 새 사용자를 등록합니다. 비밀번호는 암호화되어 저장됩니다.
+
+### 5. **`MembersDTO` (회원 정보 DTO)**
+
+이 클래스는 회원 정보를 담는 데이터 전송 객체(DTO)입니다. 회원의 기본 정보, 비밀번호, 역할, 상태 등을 관리합니다.
+
+### 6. **`LoginDTO` (로그인 응답 DTO)**
+
+로그인 응답 시 반환되는 데이터 구조로, 로그인 성공 여부, 액세스 토큰 및 리프레시 토큰 등을 포함합니다.
+
+### 7. **`TokensDTO` (토큰 DTO)**
+
+로그인 후 반환되는 JWT 토큰들을 관리하는 DTO입니다.
+
+### 기능 요약
+
+- 로그인 시 `accessToken`과 `refreshToken`을 발급하고, `refreshToken`은 DB에 저장합니다.
+- 회원 가입 시 비밀번호는 암호화하여 DB에 저장합니다.
+- JWT 토큰을 사용하여 인증 및 권한 부여를 처리합니다.
+- 로그아웃 시 `refreshToken`을 삭제하고, 클라이언트의 쿠키에서 액세스 토큰을 제거합니다.
+
+이 코드는 Spring Security와 JWT를 사용하여 인증 및 권한 관리하는 기능을 구현하며, MyBatis를 통해 데이터베이스와 상호작용합니다.
