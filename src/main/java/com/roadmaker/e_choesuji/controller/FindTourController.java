@@ -78,6 +78,6 @@ public DataDTO tourListDetailSelect(@RequestParam String keyctg2, @RequestParam 
     return data;
     }
 
-
+   
     
 }

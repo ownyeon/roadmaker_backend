@@ -3,6 +3,7 @@ package com.roadmaker.e_choesuji.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.roadmaker.e_choesuji.dto.FindTourDTO;
@@ -28,7 +29,7 @@ public interface FindTourMapper {
         List<FindTourDTO> getFindTourList(); // 결과는 DataDTO 객체의 리스트로 반환됩니다.
 
         
-        // 여행지목록상세조회회
+        // 여행지목록상세조회
         @Select("<script>" +
                         "SELECT d.destiid, d.destiname, d.destidesc, d.destiaddress, d.destiopenhr, " +
                         "       d.destiparkavail, d.desticontact, d.destilongit, d.destilatit, " +
@@ -64,7 +65,6 @@ public interface FindTourMapper {
 List<FindTourDTO> getTourListByKeywordAndRegion(String keyctg2, String keyword);
 
 
-
-        
+  
 
 }

@@ -34,4 +34,6 @@ public class FindTourServiceImpl implements FindTourService {
         return mapper.getTourListByKeywordAndRegion(keyctg2, keyword);
 
     }
+
+   
 }
