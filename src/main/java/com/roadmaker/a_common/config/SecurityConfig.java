@@ -21,10 +21,12 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import com.roadmaker.a_common.security.JwtRequestFilter;
 import com.roadmaker.a_common.security.JwtUtil;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfig {
 
     // private final MemberService memberService;
@@ -32,16 +34,7 @@ public class SecurityConfig {
     private final JwtUtil jwtUtil;
     // private final MyUserDetailService userDetailService;
 
-    // 생성자
-    public SecurityConfig(JwtRequestFilter jwtRequestFilter, JwtUtil jwtUtil) { //// , MyUserDetailService
-                                                                                //// userDetailService,MemberService
-                                                                                //// memberService
-        log.info("SecurityConfig 호출 : ");
-        this.jwtRequestFilter = jwtRequestFilter;
-        this.jwtUtil = jwtUtil;
-        // this.userDetailService = userDetailService;
-        // this.memberService = memberService;
-    }
+
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

@@ -5,9 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.crypto.SecretKey;
+import javax.xml.crypto.Data;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import com.roadmaker.c_kimjongbeom.dto.DataDTO2;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -32,27 +35,35 @@ public class JwtUtil {
     private long refresh;
 
     // JWT 토큰 생성
-    public String generateToken(String username) {
-        log.info("generateToken 시작: 사용자명 = {}", username);  // 사용자명을 로그에 기록
+    public String generateToken(DataDTO2 dataDTO2) {
+        log.info("generateToken 시작: 사용자 인덱스 = {}", dataDTO2.getMemEmail());  // 사용자 인덱스를 로그에 기록
 
-        Map<String, Object> claims = new HashMap<>();  // 토큰에 포함될 클레임 설정
-        String token = createToken(claims, username);  // 토큰 생성
+
+        // 클레임을 추가 (memId 외에도 다른 사용자 정보 추가)
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("memId", dataDTO2.getMemId());  // memId 추가
+        claims.put("memRole", dataDTO2.getMemRole());    // memRole 추가
+        claims.put("memNickname", dataDTO2.getMemNickname());  // memNickname 추가
+        claims.put("memStatus", dataDTO2.getMemStatus());  // memStatus 추가
+
+        String token = createToken(claims, dataDTO2.getMemEmail());  // 토큰 생성. memEmail을 subject로 사용
         
         log.info("JWTUTIL JWT 토큰 생성 완료: {}", token);  // 생성된 토큰 로그에 기록
         return token;
     }
 
     // 클레임을 기반으로 JWT 토큰을 생성하는 내부 메서드
-    private String createToken(Map<String, Object> claims, String username) {
-        log.info("createToken 시작: 사용자명 = {}, 클레임 수 = {}", username, claims.size());  // 사용자명과 클레임 개수 로그에 기록
+    private String createToken(Map<String, Object> claims, String memEmail) {
+        log.info("createToken 시작: 사용자명 = {}, 클레임 수 = {}", memEmail, claims.size());  // 사용자명과 클레임 개수 로그에 기록
 
         String token = Jwts.builder()
-                .setClaims(claims)  // 토큰에 포함될 클레임 설정
-                .setSubject(username)  // 토큰의 주체는 사용자의 이메일 또는 ID
-                .setIssuedAt(new Date())  // 토큰 발급 시간 설정
-                .setExpiration(new Date(System.currentTimeMillis() + expirationTime))  // 토큰 만료 시간 설정
-                .signWith(SignatureAlgorithm.HS256, secretKey)  // 서명 알고리즘과 비밀 키 설정
-                .compact();  // JWT 토큰 생성 후 반환
+            .setClaims(claims)
+            .claim("category", "acceessv& refresh")  // 클레임 설정
+            .setSubject(memEmail)  // memEmaild을를 주체로 설정(Unique)
+            .setIssuedAt(new Date())  // 발급 시간
+            .setExpiration(new Date(System.currentTimeMillis() + expirationTime))  // 만료 시간 설정
+            .signWith(SignatureAlgorithm.HS256, secretKey)  // 서명 알고리즘 및 비밀 키 설정
+            .compact();  // 토큰 생성 후 반환
 
         log.info("토큰 생성 완료: {}", token);  // 생성된 토큰 로그에 기록
         return token;
@@ -85,17 +96,24 @@ public class JwtUtil {
         return true;
     }
 
-    // 리프레시 토큰을 사용해 새로운 액세스 토큰을 생성
-    public String generateAccessTokenFromRefreshToken(String refreshToken) {
-        log.info("generateAccessTokenFromRefreshToken 시작: 리프레시 토큰 = {}", refreshToken);  // 리프레시 토큰 로그에 기록
-        
-        // 리프레시 토큰에서 사용자명 추출 후 새로운 액세스 토큰 생성
-        String username = extractUsername(refreshToken);
-        String newAccessToken = generateToken(username);
-        
-        log.info("새로운 액세스 토큰 생성 완료: {}", newAccessToken);  // 새로운 액세스 토큰 로그에 기록
-        return newAccessToken;
-    }
+// 리프레시 토큰을 사용해 새로운 액세스 토큰을 생성
+public String generateAccessTokenFromRefreshToken(String refreshToken) {
+    log.info("generateAccessTokenFromRefreshToken 시작: 리프레시 토큰 = {}", refreshToken);  // 리프레시 토큰 로그에 기록
+    
+    // 리프레시 토큰에서 사용자명(memEmail) 추출
+    String memEmail = extractUsername(refreshToken);
+
+    DataDTO2 dataDTO2 = new DataDTO2(
+        0,memEmail,
+        "","",0
+        );
+
+    // 새로운 액세스 토큰 생성
+    String newAccessToken = generateToken(dataDTO2);  // DataDTO2 객체를 사용하여 액세스 토큰 생성
+    
+    log.info("새로운 액세스 토큰 생성 완료: {}", newAccessToken);  // 새로운 액세스 토큰 로그에 기록
+    return newAccessToken;
+}
 
     // JWT 토큰의 만료 여부 확인
     public boolean isTokenExpired(String token) {
@@ -119,9 +137,9 @@ public class JwtUtil {
     public String extractUsername(String token) {
         log.info("extractUsername 시작: 토큰 = {}", token);  // 사용자명을 추출할 토큰을 로그에 기록
         
-        String username = extractAllClaims(token).getSubject();  // 주체(사용자 정보) 반환
-        log.info("사용자명 추출 완료: {}", username);  // 추출된 사용자명 로그에 기록
-        return username;
+        String memEmail = extractAllClaims(token).getSubject();  // 주체(사용자 정보) 반환
+        log.info("사용자명 추출 완료: {}", memEmail);  // 추출된 사용자명 로그에 기록
+        return memEmail;
     }
 
     // JWT 토큰의 유효성 검증

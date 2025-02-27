@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.roadmaker.c_kimjongbeom.dto.DataDTO2;
 import com.roadmaker.c_kimjongbeom.dto.MembersDTO;
 import com.roadmaker.c_kimjongbeom.mapper.MemberMapper;
 
@@ -39,6 +40,11 @@ public class MyUserDetailService implements UserDetailsService {
         }
 
         log.info("회원 정보 조회 완료: {}", member);  // 로그 추가: 회원 정보가 정상적으로 조회되었을 때 로그 출력
+
+        // MembersDTO를 기반으로 DataDTO2 생성
+        DataDTO2 dataDTO2 = new DataDTO2(member.getMemId(), member.getMemEmail(), member.getMemRole(), member.getMemNickname(), member.getMemStatus());
+        
+        log.info("DataDTO2 객체 생성 완료: {}", dataDTO2);  // 로그 추가: DataDTO2 생성 완료 로그 출력
 
         // 사용자 권한을 리스트로 생성 (회원의 역할을 권한으로 추가)
         List<GrantedAuthority> authorities = new ArrayList<>();
