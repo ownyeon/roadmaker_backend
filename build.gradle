@@ -1,68 +1,74 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.4.2'
-	id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+    id 'org.springframework.boot' version '3.4.2'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.ict'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 tasks.withType(JavaCompile).configureEach {
     options.release.set(17) // 컴파일 시 Java 17 강제 적용
 }
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	// Spring Boot Starter
-	// Spring Boot 애플리케이션에서 사용되는 기본적인 기능들을 제공하는 스타터들
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc' // JDBC 기능
-	implementation 'org.springframework.boot:spring-boot-starter-security' // 보안 기능 (인증/권한)
-	implementation 'org.springframework.boot:spring-boot-starter-web' // 웹 애플리케이션 관련 기능 (REST API 등)
+    // Spring Boot Starter
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc' // JDBC 기능
+    implementation 'org.springframework.boot:spring-boot-starter-security' // 보안 기능 (인증/권한)
+    implementation 'org.springframework.boot:spring-boot-starter-web' // 웹 애플리케이션 관련 기능 (REST API 등)
 
-	// MyBatis 관련 의존성
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4' // MyBatis 연동
-	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4' // MyBatis 테스트 지원
+    // MyBatis 관련 의존성
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4' // MyBatis 연동
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4' // MyBatis 테스트 지원
 
-	// Lombok 관련 의존성
-	compileOnly 'org.projectlombok:lombok' // Lombok (getter, setter 등 자동 생성)
-	annotationProcessor 'org.projectlombok:lombok' // Lombok 어노테이션 처리기
+    // Lombok 관련 의존성
+    compileOnly 'org.projectlombok:lombok' // Lombok (getter, setter 등 자동 생성)
+    annotationProcessor 'org.projectlombok:lombok' // Lombok 어노테이션 처리기
 
-	// Spring Boot 개발 도구
-	developmentOnly 'org.springframework.boot:spring-boot-devtools' // 개발 중 핫스왑, 자동 재시작 등 지원
+    // Spring Boot 개발 도구
+    developmentOnly 'org.springframework.boot:spring-boot-devtools' // 개발 중 핫스왑, 자동 재시작 등 지원
 
-	// MySQL 연결 드라이버
-	runtimeOnly 'com.mysql:mysql-connector-j' // MySQL JDBC 드라이버
+    // MySQL 연결 드라이버
+    runtimeOnly 'com.mysql:mysql-connector-j' // MySQL JDBC 드라이버
 
-	// 설정 및 어노테이션 처리기
-	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor' // 설정 파일 자동 처리
+    // 설정 및 어노테이션 처리기
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor' // 설정 파일 자동 처리
 
-	// 테스트 관련 의존성
-	testImplementation 'org.springframework.boot:spring-boot-starter-test' // Spring Boot 테스트
-	testImplementation 'org.springframework.security:spring-security-test' // Spring Security 테스트 지원
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher' // JUnit 플랫폼 런처
+    // 테스트 관련 의존성
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Spring Boot 테스트
+    testImplementation 'org.springframework.security:spring-security-test' // Spring Security 테스트 지원
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher' // JUnit 플랫폼 런처
 
-	// JWT 관련 의존성 (Spring Boot에서 JWT 사용을 위한 라이브러리)
-	implementation 'io.jsonwebtoken:jjwt-api:0.11.5' // JWT API
-	implementation 'io.jsonwebtoken:jjwt-impl:0.11.5' // JWT 구현체
-	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5' // Jackson을 통한 JWT 직렬화/역직렬화
+    // JWT 관련 의존성 (Spring Boot에서 JWT 사용을 위한 라이브러리)
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5' // JWT API
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.5' // JWT 구현체
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5' // Jackson을 통한 JWT 직렬화/역직렬화
 
-	// SNS 로그인 처리
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' // OAuth2 클라이언트 (SNS 로그인)
+    // SNS 로그인 처리
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' // OAuth2 클라이언트 (SNS 로그인)
+
+    // logstash 및 콘솔 컬러설정
+    implementation 'net.logstash.logback:logstash-logback-encoder:7.4' // logstash-encoder 의존성 스프링부트의 logback을 logstash가 이해할수 있도록 
+    implementation 'org.fusesource.jansi:jansi:2.4.0' 
+
+    // Elasticsearch 연동 의존성 추가 (버전 8.x에 맞는 라이브러리)
+    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
