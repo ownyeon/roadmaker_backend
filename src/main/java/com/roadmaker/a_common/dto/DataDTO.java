@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DataDTO <T> {
+public class DataDTO {
 
     private boolean success;
-    private T data;
+    private Object data;
     private String message;
     
 }
