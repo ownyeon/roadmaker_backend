@@ -5,6 +5,8 @@
         <destination>localhost:5000</destination>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
             <!-- 필요시 추가적인 설정 -->
+            <fieldName>tags</fieldName>
+            <fieldValue>springboot</fieldValue>
         </encoder>
     </appender>
 
