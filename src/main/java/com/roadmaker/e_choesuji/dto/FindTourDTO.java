@@ -1,6 +1,5 @@
 package com.roadmaker.e_choesuji.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,6 +31,5 @@ public class FindTourDTO {
     private String keyword;
     private String keyctg1;
     private String keyctg2;
-    
-}
 
+}
