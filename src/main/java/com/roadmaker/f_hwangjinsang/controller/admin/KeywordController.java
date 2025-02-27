@@ -31,6 +31,7 @@ public class KeywordController {
         } catch (Exception e) {
             data.setSuccess(false);
             data.setMessage("데이터 검색 실패");
+
         }
 
         return data;
@@ -45,7 +46,8 @@ public class KeywordController {
             data.setSuccess(service.insertKeyword(admin));
         } catch (Exception e) {
             data.setSuccess(false);
-            data.setMessage("데이터 입력 실패");
+            data.setMessage("데이터 입력 실패" + e);
+            log.info(e.getMessage() + "전체메세지:" + e);
         }
         return data;
     }
