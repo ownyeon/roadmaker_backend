@@ -25,7 +25,7 @@ public class KeywordServiceImpl implements KeywordService {
     }
 
     @Override // 키워드 관리 입력
-    public boolean insertKeyword(AdminDTO admin) {
+    public boolean insertKeyword(AdminDTO admin) {        
         return mapper.insertKeyword(admin) != -1 ? true : false;
     }
 
