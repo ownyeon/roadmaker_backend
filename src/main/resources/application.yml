@@ -8,9 +8,9 @@ spring:
     ansi:
       enabled: always
   datasource:
-    url: jdbc:mysql://localhost:3306/roadmaker
-    username: root
-    password: admin1234
+    url: jdbc:mysql://192.168.0.181/road_maker
+    username: scott
+    password: tiger
     driver-class-name: com.mysql.cj.jdbc.Driver
   security:
     oauth2:

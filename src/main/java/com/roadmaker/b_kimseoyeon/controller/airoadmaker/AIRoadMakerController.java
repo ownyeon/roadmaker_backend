@@ -29,9 +29,12 @@ public class AIRoadMakerController {
     // AI로드메이커 지역 카테고리 불러오기
     @PostMapping("/cate")
     public DataDTO searchCate() {
+        log.info("backend진입");
         DataDTO data = new DataDTO();
         try {
             data.setData(service.getCateCountry());
+            log.info(service.getCateCountry().toString());
+
         } catch (Exception e) {
            data.setSuccess(false);
            data.setMessage("카테고리 불러오기 실패");
