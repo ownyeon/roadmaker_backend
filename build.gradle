@@ -67,6 +67,8 @@ dependencies {
 
     // Elasticsearch 연동 의존성 추가 (버전 8.x에 맞는 라이브러리)
     implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+    implementation 'org.aspectj:aspectjrt:1.9.7' // 최신 버전을 사용하세요
+    implementation 'org.aspectj:aspectjweaver:1.9.7' // AspectJ weaving을 위한 의존성
 }
 
 tasks.named('test') {

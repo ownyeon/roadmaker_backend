@@ -26,7 +26,7 @@ public class KeywordServiceImpl implements KeywordService {
 
     @Override // 키워드 관리 입력
     public boolean insertKeyword(AdminDTO admin) {        
-        return mapper.insertKeyword(admin) != -1 ? true : false;
+        return mapper.insertKeyword(admin) != 0 ? true : false;
     }
 
     @Override // 키워드 관리 수정
@@ -34,9 +34,9 @@ public class KeywordServiceImpl implements KeywordService {
 
         // 카테고리 수정
         if (admin.getChanged().equals("keyctg2")) {
-            return mapper.updateKeyctg2(admin) != -1 ? true : false;
+            return mapper.updateKeyctg2(admin) != 0 ? true : false;
         } else if (admin.getChanged().equals("keyword")) {
-            return mapper.updateKeyword(admin) != -1 ? true : false;
+            return mapper.updateKeyword(admin) != 0 ? true : false;
         }
         return false;
     }
@@ -46,7 +46,7 @@ public class KeywordServiceImpl implements KeywordService {
         DataDTO data = new DataDTO();
         try {
             if (admin.getKeymid() != null) {
-                if (mapper.deleteKeyword(admin) != -1) {
+                if (mapper.deleteKeyword(admin) != 0) {
                     data.setSuccess(true);
                     data.setMessage("데이터 삭제 성공");
                 } else {
@@ -61,7 +61,7 @@ public class KeywordServiceImpl implements KeywordService {
                     data.setSuccess(false);
                     data.setMessage("country가 1개보다 많습니다.");
                 } else {
-                    if (mapper.deleteCountry(admin) != -1) {
+                    if (mapper.deleteCountry(admin) != 0) {
                         data.setSuccess(true);
                         data.setMessage("데이터 삭제 성공");
                     } else {
@@ -116,7 +116,7 @@ public class KeywordServiceImpl implements KeywordService {
 
     @Override // 키워드 관리 키워드내 여행지 삭제
     public boolean deleteKeyused(AdminDTO admin) {
-        return mapper.deleteKeyused(admin) != -1 ? true : false;
+        return mapper.deleteKeyused(admin) != 0 ? true : false;
     }
 
 }

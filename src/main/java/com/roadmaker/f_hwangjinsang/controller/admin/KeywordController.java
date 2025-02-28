@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.roadmaker.a_common.dto.DataDTO;
+import com.roadmaker.aop.RunningTime;
 import com.roadmaker.f_hwangjinsang.dto.admin.AdminDTO;
 import com.roadmaker.f_hwangjinsang.service.admin.KeywordService;
 
@@ -21,6 +22,7 @@ public class KeywordController {
     private KeywordService service;
 
     // ******************************************************** 키워드 관련
+    @RunningTime
     @PostMapping("/keyword/select") // 키워드 카테고리 전체 검색
     public DataDTO keywordSelect() {
         DataDTO data = new DataDTO();
