@@ -2,6 +2,9 @@ package com.roadmaker.e_choesuji.mapper;
 
 import java.util.List;
 
+import javax.print.attribute.standard.Destination;
+import javax.swing.plaf.synth.Region;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -73,14 +76,6 @@ public interface FindTourMapper {
                         "#{imgsname3}, " +
                         "#{imgsname4})")
         void insertDestination(HotelRegistrationRequestDTO request);
-
-        // 지역 목록 조회 쿼리
-        @Select("SELECT DISTINCT keyctg2 FROM destinations")
-        List<String> getRegions(); // 'destinations' 테이블에서 지역 목록 조회
-
-        // 지역과 키워드를 기반으로 여행지 목록을 조회하는 쿼리
-        @Select("SELECT * FROM destinations WHERE keyctg2 = #{keyctg2} AND (destiname LIKE CONCAT('%', #{keyword}, '%') OR destidesc LIKE CONCAT('%', #{keyword}, '%'))")
-        List<FindTourDTO> getTourListByKeywordAndRegion(@Param("keyctg2") String keyctg2,
-                        @Param("keyword") String keyword);
+      
 
 }

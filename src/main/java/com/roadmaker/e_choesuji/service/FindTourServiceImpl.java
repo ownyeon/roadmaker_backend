@@ -2,6 +2,7 @@ package com.roadmaker.e_choesuji.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,15 +36,6 @@ public class FindTourServiceImpl implements FindTourService {
         return mapper.getTourListDetail(destiid);
     }
 
-    // DB에서 지역 목록을 조회
-    public List<String> getRegions() {
-        return mapper.getRegions(); // DB에서 지역 목록을 가져오는 메서드 호출
-    }
-
-    // 지역과 키워드로 여행지 목록 조회
-    public List<FindTourDTO> getTourListByKeywordAndRegion(String keyctg2, String keyword) {
-        return mapper.getTourListByKeywordAndRegion(keyctg2, keyword);
-    }
 
     // 신규여행지 등록
     public void registerHotel(HotelRegistrationRequestDTO request) throws Exception {

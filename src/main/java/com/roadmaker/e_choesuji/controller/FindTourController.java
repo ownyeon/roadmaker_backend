@@ -2,6 +2,9 @@ package com.roadmaker.e_choesuji.controller;
 
 import java.util.List;
 
+import javax.print.attribute.standard.Destination;
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -61,25 +64,9 @@ public class FindTourController {
         return data;
     }
 
-    // 여행지 지역키워드 불러오기
-    @GetMapping("/tourlistdetailselect")
-    public List<String> getRegions() {
-        return findTourService.getRegions();  // 지역 목록을 반환하는 서비스 호출
-    }
+ 
 
-    // 지역과 키워드에 맞는 여행지 목록 조회 API
-    @GetMapping("/search")
-    public List<FindTourDTO> searchTours(
-        @RequestParam String keyctg2,    // 지역
-        @RequestParam String keyword    // 키워드
-    ) {
-        return findTourService.getTourListByKeywordAndRegion(keyctg2, keyword);
-    }
-   
-    
-
-
-    //여행지신규등록록
+    //여행지신규등록
     @PostMapping("/register")
     public DataDTO registerHotel(@RequestBody HotelRegistrationRequestDTO request) {
         DataDTO data = new DataDTO();
